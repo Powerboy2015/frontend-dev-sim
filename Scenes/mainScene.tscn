@@ -13,3 +13,8 @@ texture = ExtResource("1_2c717")
 texture_filter = 1
 position = Vector2(124, 616)
 texture = ExtResource("1_2c717")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(218, 614)
+texture = ExtResource("1_2c717")
