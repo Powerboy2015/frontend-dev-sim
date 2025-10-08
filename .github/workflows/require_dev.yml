@@ -1,0 +1,15 @@
+name: Protect main
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch
+        if: github.head_ref != 'dev'
+        run: |
+          echo "Only merges from dev are allowed into main."
+          exit 1
