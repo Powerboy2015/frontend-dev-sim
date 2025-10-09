@@ -28,15 +28,15 @@ position = Vector2(2, 0)
 script = ExtResource("2_hewda")
 
 [node name="WalletImg" type="Sprite2D" parent="Player/Wallet"]
-position = Vector2(1022, 32)
-scale = Vector2(0.41319433, 0.41326532)
+position = Vector2(1020.875, 32)
+scale = Vector2(0.42881912, 0.41326532)
 texture = ExtResource("2_ly6xb")
 
 [node name="Coins" type="Label" parent="Player/Wallet"]
-offset_left = 1070.0
-offset_top = 8.0
+offset_left = 1062.0
+offset_top = 16.0
 offset_right = 1110.0
-offset_bottom = 50.0
+offset_bottom = 58.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
