@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ClientBase" load_steps=3 format=3 uid="uid://cb3vkpgoongut"]
+
+[ext_resource type="Script" uid="uid://b7wxpjrhntokw" path="res://Resources/Resource_Classes/ClientBase.cs" id="1_7ts5k"]
+[ext_resource type="Texture2D" uid="uid://dkjv0vlygkhn" path="res://icon.svg" id="1_xr4yi"]
+
+[resource]
+script = ExtResource("1_7ts5k")
+Name = "Lily"
+Description = "I need help making an HTML website for my hospital!"
+ClientTexture = ExtResource("1_xr4yi")
+metadata/_custom_type_script = "uid://b7wxpjrhntokw"
