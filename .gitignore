@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Visual Studio generated files
+*.csproj
+*.sln
