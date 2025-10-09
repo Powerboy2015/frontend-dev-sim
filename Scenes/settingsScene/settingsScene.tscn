@@ -281,7 +281,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.89059, 0.89059, 0.8905901, 1)
 theme_override_fonts/font = ExtResource("1_vi0ng")
 theme_override_font_sizes/font_size = 24
-text = "Up:"
+text = "Left:"
 
 [node name="Button" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Settings/Controls/HBoxContainer/Movement/MoveLeft"]
 custom_minimum_size = Vector2(75, 0)
