@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "frontend-dev-sim", "frontend-dev-sim.csproj", "{03F3722F-27DF-42CA-9D32-C2E812CE5BBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03F3722F-27DF-42CA-9D32-C2E812CE5BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F3722F-27DF-42CA-9D32-C2E812CE5BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F3722F-27DF-42CA-9D32-C2E812CE5BBC}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{03F3722F-27DF-42CA-9D32-C2E812CE5BBC}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{03F3722F-27DF-42CA-9D32-C2E812CE5BBC}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{03F3722F-27DF-42CA-9D32-C2E812CE5BBC}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
