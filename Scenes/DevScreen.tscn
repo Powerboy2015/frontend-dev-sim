@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd8wls15d2u7"]
+
+[ext_resource type="Script" uid="uid://cvd8h4c47flk" path="res://scripts/DevScreen.cs" id="1_tqsk2"]
+
+[node name="DevScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tqsk2")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.05
+offset_bottom = -0.24079895
+
+[node name="Editor button" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+disabled = true
+text = "code editor"
+
+[node name="Live preview" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "live preview"
+
+[node name="close window" type="Button" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+text = "X"
+
+[node name="CodeSpace" type="Control" parent="Panel"]
+layout_mode = 1
+anchor_top = 0.054
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="preview" type="TextEdit" parent="Panel/CodeSpace"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.3999977
+offset_right = -0.4000244
+grow_horizontal = 2
+grow_vertical = 2
+emoji_menu_enabled = false
+
+[node name="Input_Field" type="TextEdit" parent="Panel/CodeSpace"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.3999977
+offset_right = -0.4000244
+grow_horizontal = 2
+grow_vertical = 2
+emoji_menu_enabled = false
+
+[connection signal="pressed" from="Panel/HBoxContainer/Editor button" to="." method="OnCodeEditorPressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Live preview" to="." method="OnLivePreviewPressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/close window" to="." method="OnCloseWindowPressed"]
