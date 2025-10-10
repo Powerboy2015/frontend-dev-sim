@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4qii8p35ld4u"]
 
-[ext_resource type="Script" uid="uid://c5rra4ti70jl8" path="res://Scripts/AddClients.cs" id="1_ul8gk"]
-[ext_resource type="PackedScene" uid="uid://dv01iimy0w53g" path="res://Scenes/ClientBaseScene.tscn" id="2_pgm76"]
-[ext_resource type="Resource" uid="uid://cb3vkpgoongut" path="res://Resources/Clients/lily.tres" id="3_pgm76"]
-[ext_resource type="Resource" uid="uid://0bcrd235vbq1" path="res://Resources/Clients/thomas.tres" id="5_gm1ne"]
+[ext_resource type="Script" uid="uid://c5rra4ti70jl8" path="res://Scenes/ClientScene/AddClients.cs" id="1_kv485"]
+[ext_resource type="PackedScene" uid="uid://dv01iimy0w53g" path="res://Scenes/ClientScene/ClientBaseScene.tscn" id="2_1471c"]
+[ext_resource type="Resource" uid="uid://cb3vkpgoongut" path="res://Resources/Clients/lily.tres" id="3_1pwuu"]
+[ext_resource type="Resource" uid="uid://0bcrd235vbq1" path="res://Resources/Clients/thomas.tres" id="4_qman7"]
 
 [node name="ClientScreen" type="Control"]
 layout_mode = 3
@@ -79,9 +79,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ul8gk")
-clientBase = ExtResource("2_pgm76")
-Clients = Array[Object]([ExtResource("3_pgm76"), ExtResource("5_gm1ne")])
+script = ExtResource("1_kv485")
+clientBase = ExtResource("2_1471c")
+Clients = Array[Object]([ExtResource("3_1pwuu"), ExtResource("4_qman7")])
 
 [node name="Content" type="VBoxContainer" parent="Panel/ScrollContent"]
 clip_contents = true
