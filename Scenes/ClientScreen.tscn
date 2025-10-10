@@ -1,16 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4qii8p35ld4u"]
+[gd_scene load_steps=5 format=3 uid="uid://c4qii8p35ld4u"]
 
 [ext_resource type="Script" uid="uid://c5rra4ti70jl8" path="res://Scripts/AddClients.cs" id="1_ul8gk"]
-[ext_resource type="Texture2D" uid="uid://dkjv0vlygkhn" path="res://icon.svg" id="2_jhcj1"]
 [ext_resource type="PackedScene" uid="uid://dv01iimy0w53g" path="res://Scenes/ClientBaseScene.tscn" id="2_pgm76"]
-[ext_resource type="Script" uid="uid://b7wxpjrhntokw" path="res://Resources/Resource_Classes/ClientBase.cs" id="3_pgm76"]
-
-[sub_resource type="Resource" id="Resource_gm1ne"]
-script = ExtResource("3_pgm76")
-Name = "Lily"
-Description = "i need help setting up an html page for my hospital"
-ClientTexture = ExtResource("2_jhcj1")
-metadata/_custom_type_script = "uid://b7wxpjrhntokw"
+[ext_resource type="Resource" uid="uid://cb3vkpgoongut" path="res://Resources/Clients/lily.tres" id="3_pgm76"]
+[ext_resource type="Resource" uid="uid://0bcrd235vbq1" path="res://Resources/Clients/thomas.tres" id="5_gm1ne"]
 
 [node name="ClientScreen" type="Control"]
 layout_mode = 3
@@ -88,7 +81,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ul8gk")
 clientBase = ExtResource("2_pgm76")
-Clients = Array[Object]([SubResource("Resource_gm1ne")])
+Clients = Array[Object]([ExtResource("3_pgm76"), ExtResource("5_gm1ne")])
 
 [node name="Content" type="VBoxContainer" parent="Panel/ScrollContent"]
 clip_contents = true

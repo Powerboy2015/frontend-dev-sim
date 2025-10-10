@@ -9,5 +9,5 @@ public partial class ClientBase : Resource
     [Export] public string Description = "";
     [Export] public string Code = "";
     public string PlayerCode = "";
-    [Export] public Texture ClientTexture = null;
+    [Export] public Texture2D ClientTexture = null;
 }
