@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ClientBase" load_steps=3 format=3 uid="uid://0bcrd235vbq1"]
+
+[ext_resource type="Texture2D" uid="uid://bnsrp6pad77sy" path="res://sprites/Tree.png" id="1_t68hl"]
+[ext_resource type="Script" uid="uid://b7wxpjrhntokw" path="res://Resources/Resource_Classes/ClientBase.cs" id="1_yad0f"]
+
+[resource]
+script = ExtResource("1_yad0f")
+Name = "Thomas"
+Description = "Ik wil graag een website voor mijn epische bedrijf"
+ClientTexture = ExtResource("1_t68hl")
+metadata/_custom_type_script = "uid://b7wxpjrhntokw"
