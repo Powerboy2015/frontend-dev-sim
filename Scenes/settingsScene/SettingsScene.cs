@@ -1,17 +1,29 @@
 using Godot;
 using System;
-using System.Threading;
 
 public partial class SettingsScene : Control
 {
-	[Export] private NodePath ConfigNodePath;
-	private ConfigINI _config;
-
+	private ConfigManager _config;
+	
 	private readonly string[] RESOLUTIONS = new[]
 	{
-		"1152x648"
+		"1152x648",
+		"1280x720",
+		"1366x768",
+		"1600x900",
+		"1920x1080",
+		"2560x1440"
 	};
-	
+
+	// Screen preference storing
+	private OptionButton _resInput;
+	private CheckButton _fullscreenButton;
+
+	// Sound preference storing
+	private HSlider _masterSlider;
+	private HSlider _musicSlider;
+	private HSlider _sfxSlider;
+
 	// Key bind preference storing
 	private KeyBindButton _upButton;
 	private KeyBindButton _downButton;
@@ -22,33 +34,22 @@ public partial class SettingsScene : Control
 	
 	public override void _Ready()
 	{
-		var baseDir = "VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Settings/";
-		_config = GetNode<ConfigINI>(ConfigNodePath);
+		// Ja pak die singleton ook hier erbij
+		_config = GetNode<ConfigManager>("/root/ConfigManager");
 		
-		if (_config == null)
-		{
-			GD.PushError("ConfigINI not found. Assign ConfigNodePath in the Inspector.");
-			return;
-		}
-		_config.OnLoad();
+		var baseDir = "VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Settings/";
 		
 		// Get UI elements
-		var resInput = GetNode<OptionButton>(baseDir + "Screen/Resolution/OptionButton");
+		_resInput = GetNode<OptionButton>(baseDir + "Screen/Resolution/OptionButton");
 		foreach (var res in RESOLUTIONS)
 		{
-			resInput.AddItem(res);
+			_resInput.AddItem(res);
 		}
 		
-		// Connect resolution change event
-		resInput.ItemSelected += (long index) =>
-		{
-			_config.SetResolution(RESOLUTIONS[(int)index]);
-		};
-		
-		var fullscreen = GetNode<CheckButton>(baseDir + "Screen/Fullscreen/CheckButton");
-		var masterSlider = GetNode<HSlider>(baseDir + "Sound/Master/HSlider");
-		var musicSlider = GetNode<HSlider>(baseDir + "Sound/Music/HSlider");
-		var sfxSlider = GetNode<HSlider>(baseDir + "Sound/SFX/HSlider");
+		_fullscreenButton = GetNode<CheckButton>(baseDir + "Screen/Fullscreen/CheckButton");
+		_masterSlider = GetNode<HSlider>(baseDir + "Sound/Master/HSlider");
+		_musicSlider = GetNode<HSlider>(baseDir + "Sound/Music/HSlider");
+		_sfxSlider = GetNode<HSlider>(baseDir + "Sound/SFX/HSlider");
 		
 		// Keybind stuff ofzo
 		_upButton = GetNode<KeyBindButton>(baseDir + "Controls/HBoxContainer/Movement/MoveUp/Button");
@@ -58,23 +59,17 @@ public partial class SettingsScene : Control
 		_interactButton = GetNode<KeyBindButton>(baseDir + "Controls/HBoxContainer/Other/Interact/Button");
 		_menuButton = GetNode<KeyBindButton>(baseDir + "Controls/HBoxContainer/Other/Menu/Button");
 		
-		// Connect UI events to save settings
-		fullscreen.Toggled += (bool toggled) =>
-		{
-			GetWindow().Mode = toggled ? Window.ModeEnum.Fullscreen : Window.ModeEnum.Windowed;
-		};
-		
-		masterSlider.ValueChanged += (double value) =>
+		_masterSlider.ValueChanged += (double value) =>
 		{
 			AudioServer.SetBusVolumeDb(0, (float)value);
 		};
 		
-		musicSlider.ValueChanged += (double value) =>
+		_musicSlider.ValueChanged += (double value) =>
 		{
 			AudioServer.SetBusVolumeDb(1, (float)value);
 		};
 		
-		sfxSlider.ValueChanged += (double value) =>
+		_sfxSlider.ValueChanged += (double value) =>
 		{
 			AudioServer.SetBusVolumeDb(2, (float)value);
 		};
@@ -91,7 +86,7 @@ public partial class SettingsScene : Control
 		// Back button
 		GetNode<Button>("BackButton").Pressed += () =>
 		{
-			GetTree().ChangeSceneToFile("res://Scenes/menuScene/menuScene.tscn");
+			GetTree().ChangeSceneToFile("res://scenes/menuScene/menuScene.tscn");
 		};
 		
 		// Update UI with loaded values
@@ -100,6 +95,12 @@ public partial class SettingsScene : Control
 	
 	private void SaveSettings()
 	{
+		// Save resolution
+		_config.SetResolution(RESOLUTIONS[_resInput.Selected]);
+
+		// Save fullscreen
+		GetWindow().Mode = _fullscreenButton.ButtonPressed ? Window.ModeEnum.Fullscreen : Window.ModeEnum.Windowed;
+
 		// Save bindings
 		_config.SetControl("MoveUp", (int)_upButton.CurrentKey);
 		_config.SetControl("MoveDown", (int)_downButton.CurrentKey);
@@ -113,30 +114,23 @@ public partial class SettingsScene : Control
 	
 	private void UpdateUIFromConfig()
 	{
-		var baseDir = "VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Settings/";
-		
 		// Update resolution
 		var currentRes = _config.GetResolutionString();
-		var resInput = GetNode<OptionButton>(baseDir + "Screen/Resolution/OptionButton");
 		int resIndex = Array.IndexOf(RESOLUTIONS, currentRes);
+
 		if (resIndex >= 0)
 		{
-			resInput.Selected = resIndex;
+			_resInput.Selected = resIndex;
 		}
 		
 		// Update fullscreen
-		var fullscreen = GetNode<CheckButton>(baseDir + "Screen/Fullscreen/CheckButton");
-		fullscreen.ButtonPressed = GetWindow().Mode == Window.ModeEnum.Fullscreen;
+		_fullscreenButton.ButtonPressed = GetWindow().Mode == Window.ModeEnum.Fullscreen;
 		
 		// Update audio
-		var masterSlider = GetNode<HSlider>(baseDir + "Sound/Master/HSlider");
-		var musicSlider = GetNode<HSlider>(baseDir + "Sound/Music/HSlider");
-		var sfxSlider = GetNode<HSlider>(baseDir + "Sound/SFX/HSlider");
-		
-		masterSlider.Value = AudioServer.GetBusVolumeDb(0);
-		musicSlider.Value = AudioServer.GetBusVolumeDb(1);
-		sfxSlider.Value = AudioServer.GetBusVolumeDb(2);
-		
+		_masterSlider.Value = AudioServer.GetBusVolumeDb(0);
+		_musicSlider.Value = AudioServer.GetBusVolumeDb(1);
+		_sfxSlider.Value = AudioServer.GetBusVolumeDb(2);
+
 		// Update keybinds
 		_upButton.CurrentKey = (Key)_config.GetControl("MoveUp");
 		_downButton.CurrentKey = (Key)_config.GetControl("MoveDown");
