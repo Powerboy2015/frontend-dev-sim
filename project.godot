@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="frontend-dev-sim"
-run/main_scene="uid://iofljol036va"
+run/main_scene="uid://bqigkowxlpv1i"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+ClientSettings="*res://Singletons/ClientSettings.cs"
 
 [dotnet]
 
