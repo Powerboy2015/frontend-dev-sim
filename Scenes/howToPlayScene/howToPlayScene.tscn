@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://m1fs8h84fps2"]
 
-[ext_resource type="Script" uid="uid://ioad5vm006yg" path="res://Scenes/howToPlayScene/HowToPlayScene.cs" id="1_3tuhk"]
+[ext_resource type="Script" uid="uid://ioad5vm006yg" path="res://scenes/howToPlayScene/HowToPlayScene.cs" id="1_3tuhk"]
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_4p4c5"]
 
 [node name="HowToPlayScene" type="Control"]

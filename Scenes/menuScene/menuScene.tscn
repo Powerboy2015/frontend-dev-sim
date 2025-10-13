@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqigkowxlpv1i"]
+[gd_scene load_steps=3 format=3 uid="uid://bqigkowxlpv1i"]
 
-[ext_resource type="Script" uid="uid://cbo5lgdbcx48x" path="res://Scenes/menuScene/MenuScene.cs" id="1_2q8gc"]
+[ext_resource type="Script" uid="uid://cbo5lgdbcx48x" path="res://scenes/menuScene/MenuScene.cs" id="1_2q8gc"]
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_f05m2"]
-[ext_resource type="Script" uid="uid://domo7jd2j6c2t" path="res://Scenes/menuScene/ConfigINI.cs" id="3_f05m2"]
 
 [node name="MenuScene" type="Control"]
 layout_mode = 3
@@ -14,7 +13,6 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_2q8gc")
-ConfigNodePath = NodePath("ConfigINI")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -25,77 +23,68 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.76862746, 1, 0.972549, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -282.0
-offset_top = -145.5
-offset_right = 282.0
-offset_bottom = 145.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer"]
+layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
 theme_override_fonts/font = ExtResource("2_f05m2")
-theme_override_font_sizes/font_size = 96
-text = "Front-end Simulator
-"
+theme_override_font_sizes/font_size = 64
+text = "Front-end Simulator"
+horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="StartButton" type="Button" parent="AspectRatioContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("2_f05m2")
 theme_override_font_sizes/font_size = 36
 text = "Start"
 
-[node name="HowToPlayButton" type="Button" parent="VBoxContainer"]
+[node name="HowToPlayButton" type="Button" parent="AspectRatioContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("2_f05m2")
 theme_override_font_sizes/font_size = 36
 text = "How to play"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="AspectRatioContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("2_f05m2")
 theme_override_font_sizes/font_size = 36
 text = "Settings"
 
-[node name="CreditsButton" type="Button" parent="VBoxContainer"]
+[node name="CreditsButton" type="Button" parent="AspectRatioContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("2_f05m2")
 theme_override_font_sizes/font_size = 36
 text = "Credits"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="AspectRatioContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("2_f05m2")
 theme_override_font_sizes/font_size = 36
 text = "Quit"
-
-[node name="ConfigINI" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("3_f05m2")
