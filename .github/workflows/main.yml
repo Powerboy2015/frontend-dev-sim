@@ -20,9 +20,10 @@ jobs:
 
       - name: Install Godot
         run: |
-          wget https://downloads.tuxfamily.org/godotengine/4.3/Godot_v4.3-stable_linux.x86_64.zip
-          unzip Godot_v4.3-stable_linux.x86_64.zip
-          mv Godot_v4.3-stable_linux.x86_64 /usr/local/bin/godot
+          GODOT_VERSION=4.3
+          wget https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip
+          unzip Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip -d /usr/local/bin
+          mv /usr/local/bin/Godot_v${GODOT_VERSION}-stable_linux.x86_64 /usr/local/bin/godot
           chmod +x /usr/local/bin/godot
 
       - name: Build C# solutions
