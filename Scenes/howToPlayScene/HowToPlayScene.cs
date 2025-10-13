@@ -7,7 +7,7 @@ public partial class HowToPlayScene : Control
 	{
 		GetNode<Button>("BackButton").Pressed += () =>
 		{
-			GetTree().ChangeSceneToFile("res://Scenes/menuScene/menuScene.tscn");
+			GetTree().ChangeSceneToFile("res://scenes/menuScene/menuScene.tscn");
 		};
 	}
 }

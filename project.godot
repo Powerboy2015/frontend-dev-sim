@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+ConfigManager="*res://scripts/singletons/ConfigManager.cs"
 ClientSettings="*res://Singletons/ClientSettings.cs"
 
 [dotnet]

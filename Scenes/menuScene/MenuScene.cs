@@ -3,34 +3,32 @@ using System;
 
 public partial class MenuScene : Control
 {
-	[Export] private NodePath ConfigNodePath;
-	private ConfigINI _config;
 	public override void _Ready()
 	{
-		_config = GetNodeOrNull<ConfigINI>(ConfigNodePath);
-		if (_config == null)
-		{
-			GD.PushError("ConfigINI not found. Assign ConfigNodePath in the Inspector.");
-			return;
-		}
-		_config.OnLoad();
+		// Hoppa pak die singleton erbij
+		var config = GetNode<ConfigManager>("/root/ConfigManager");
 		
-		GetNode<Button>("VBoxContainer/StartButton").Pressed += () =>
+		GetNode<Button>("AspectRatioContainer/VBoxContainer/VBoxContainer/StartButton").Pressed += () =>
 		{
-			GetTree().ChangeSceneToFile("res://Scenes/gameScene/gameScene.tscn");
+			GetTree().ChangeSceneToFile("res://scenes/gameScene/gameScene.tscn");
 		};
 		
-		GetNode<Button>("VBoxContainer/SettingsButton").Pressed += () =>
+		GetNode<Button>("AspectRatioContainer/VBoxContainer/VBoxContainer/SettingsButton").Pressed += () =>
 		{
-			GetTree().ChangeSceneToFile("res://Scenes/settingsScene/settingsScene.tscn");
+			GetTree().ChangeSceneToFile("res://scenes/settingsScene/settingsScene.tscn");
 		};
 		
-		GetNode<Button>("VBoxContainer/HowToPlayButton").Pressed += () =>
+		GetNode<Button>("AspectRatioContainer/VBoxContainer/VBoxContainer/HowToPlayButton").Pressed += () =>
 		{
-			GetTree().ChangeSceneToFile("res://Scenes/howToPlayScene/howToPlayScene.tscn");
+			GetTree().ChangeSceneToFile("res://scenes/howToPlayScene/howToPlayScene.tscn");
 		};
 		
-		GetNode<Button>("VBoxContainer/QuitButton").Pressed += () =>
+		GetNode<Button>("AspectRatioContainer/VBoxContainer/VBoxContainer/CreditsButton").Pressed += () =>
+		{
+			GetTree().ChangeSceneToFile("res://scenes/howToPlayScene/howToPlayScene.tscn");
+		};
+		
+		GetNode<Button>("AspectRatioContainer/VBoxContainer/VBoxContainer/QuitButton").Pressed += () =>
 		{
 			GetTree().Quit();
 		};
