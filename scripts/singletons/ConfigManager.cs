@@ -1,13 +1,21 @@
 using Godot;
 using System;
 
-public partial class ConfigINI : Control
+public partial class ConfigManager : Node
 {
+	// 
+	public static ConfigManager Instance { get; private set; }
+	
 	private ConfigFile CF = new ConfigFile();
 	
-	[Export]
 	public string CFName = "settings.cfg";
 	
+	public override void _EnterTree()
+	{
+		Instance = this;
+		OnLoad();
+	}
+		
 	public int GetControl(string control)
 	{
 		return (int)(long)CF.GetValue("Controls", control, (int)Key.None);
@@ -30,11 +38,11 @@ public partial class ConfigINI : Control
 	
 	public void Save()
 	{
-		var size = GetWindow().Size;
 		// Screen settings
-		CF.SetValue("Screen", "ResolutionWidth", size.X);
-		CF.SetValue("Screen", "ResolutionHeight", size.Y);
-		CF.SetValue("Screen", "Fullscreen", GetWindow().Mode == Window.ModeEnum.Fullscreen);
+		var window = GetWindow();
+		CF.SetValue("Screen", "ResolutionWidth", window.Size.X);
+		CF.SetValue("Screen", "ResolutionHeight", window.Size.Y);
+		CF.SetValue("Screen", "Fullscreen", window.Mode == Window.ModeEnum.Fullscreen);
 		
 		// Sound settings
 		CF.SetValue("Sound", "Master", AudioServer.GetBusVolumeDb(0));
@@ -68,10 +76,10 @@ public partial class ConfigINI : Control
 		int width = (int)(long)CF.GetValue("Screen", "ResolutionWidth", (long)current.X);
 		int height = (int)(long)CF.GetValue("Screen", "ResolutionHeight", (long)current.Y);
 		bool fullscreen = (bool)CF.GetValue("Screen", "Fullscreen", false);
-		
+
 		window.Size = new Vector2I(width, height);
 		window.Mode = fullscreen ? Window.ModeEnum.Fullscreen : Window.ModeEnum.Windowed;
-		
+
 		// Sound settings
 		float master = (float)CF.GetValue("Sound", "Master", 1.0f);
 		float music = (float)CF.GetValue("Sound", "Music", 1.0f);
