@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://e4p5fy0umqa1"]
+[gd_scene load_steps=16 format=3 uid="uid://e4p5fy0umqa1"]
 
 [ext_resource type="Texture2D" uid="uid://b72eivcs0n6cs" path="res://Sprites/wall.png" id="1_112p8"]
 [ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://player.tscn" id="2_112p8"]
 [ext_resource type="Texture2D" uid="uid://dl0p85vm8nv5e" path="res://Sprites/Flooring.png" id="2_e2u21"]
 [ext_resource type="Texture2D" uid="uid://dah722x252raa" path="res://Sprites/image 42.png" id="4_e2u21"]
 [ext_resource type="Texture2D" uid="uid://jjwxx6xsvvts" path="res://Sprites/image 13.png" id="5_bss38"]
+[ext_resource type="Texture2D" uid="uid://bv7ym5yrc8y5f" path="res://Sprites/image 41.png" id="6_tda05"]
+[ext_resource type="Texture2D" uid="uid://c4mv2k1mptpwv" path="res://Sprites/door.png" id="7_qn3nj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sy5k4"]
 size = Vector2(1147.4375, 326.4375)
@@ -65,6 +67,7 @@ texture = ExtResource("1_112p8")
 [node name="Player" parent="." instance=ExtResource("2_112p8")]
 z_index = 1
 position = Vector2(171, 482)
+Speed = 600.0
 
 [node name="floor" type="Sprite2D" parent="."]
 
@@ -144,3 +147,22 @@ shape = SubResource("SegmentShape2D_tda05")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders"]
 shape = SubResource("SegmentShape2D_qn3nj")
+
+[node name="windows" type="Sprite2D" parent="."]
+position = Vector2(-295, -18)
+
+[node name="Sprite2D2" type="Sprite2D" parent="windows"]
+position = Vector2(933, 182)
+scale = Vector2(0.9238095, 0.9727273)
+texture = ExtResource("6_tda05")
+
+[node name="Sprite2D3" type="Sprite2D" parent="windows"]
+position = Vector2(1278, 179)
+scale = Vector2(0.9238095, 0.9727273)
+texture = ExtResource("6_tda05")
+
+[node name="door" type="Sprite2D" parent="."]
+position = Vector2(267, 634)
+rotation = 1.5707964
+scale = Vector2(6.8975806, 4.3718195)
+texture = ExtResource("7_qn3nj")
