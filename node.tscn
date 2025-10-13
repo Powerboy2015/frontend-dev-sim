@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://e4p5fy0umqa1"]
+[gd_scene load_steps=18 format=3 uid="uid://e4p5fy0umqa1"]
 
 [ext_resource type="Texture2D" uid="uid://b72eivcs0n6cs" path="res://Sprites/wall.png" id="1_112p8"]
 [ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://player.tscn" id="2_112p8"]
@@ -35,6 +35,13 @@ b = Vector2(136, 56)
 a = Vector2(328, 648)
 b = Vector2(1152, 648)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_l6pdb"]
+b = Vector2(-1, 149)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_r657h"]
+a = Vector2(201, 718)
+b = Vector2(328, 718)
+
 [node name="Node" type="Node"]
 
 [node name="wall" type="StaticBody2D" parent="."]
@@ -55,7 +62,7 @@ scale = Vector2(0.8196931, 0.83503836)
 texture = ExtResource("1_112p8")
 
 [node name="Sprite2D3" type="Sprite2D" parent="wall"]
-position = Vector2(480, 168.00002)
+position = Vector2(479, 169.00002)
 scale = Vector2(0.8196931, 0.83503836)
 texture = ExtResource("1_112p8")
 
@@ -147,6 +154,18 @@ shape = SubResource("SegmentShape2D_tda05")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders"]
 shape = SubResource("SegmentShape2D_qn3nj")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Borders"]
+position = Vector2(199, 655)
+shape = SubResource("SegmentShape2D_l6pdb")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Borders"]
+position = Vector2(326, 655)
+shape = SubResource("SegmentShape2D_l6pdb")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Borders"]
+position = Vector2(-3, 85)
+shape = SubResource("SegmentShape2D_r657h")
 
 [node name="windows" type="Sprite2D" parent="."]
 position = Vector2(-295, -18)
