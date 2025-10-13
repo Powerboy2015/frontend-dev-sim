@@ -21,18 +21,18 @@ texture_filter = 1
 position = Vector2(218, 614)
 texture = ExtResource("1_2c717")
 
-[node name="Player" type="Node2D" parent="."]
+[node name="UI" type="Node2D" parent="."]
 
-[node name="Wallet" type="Node2D" parent="Player"]
+[node name="Wallet" type="Node2D" parent="UI"]
 position = Vector2(2, 0)
 script = ExtResource("2_hewda")
 
-[node name="WalletImg" type="Sprite2D" parent="Player/Wallet"]
+[node name="WalletImg" type="Sprite2D" parent="UI/Wallet"]
 position = Vector2(1020.875, 32)
 scale = Vector2(0.42881912, 0.41326532)
 texture = ExtResource("2_ly6xb")
 
-[node name="Coins" type="Label" parent="Player/Wallet"]
+[node name="Coins" type="Label" parent="UI/Wallet"]
 offset_left = 1062.0
 offset_top = 16.0
 offset_right = 1110.0
@@ -40,32 +40,32 @@ offset_bottom = 58.0
 theme_override_font_sizes/font_size = 30
 text = "0"
 
-[node name="Button1" type="Button" parent="Player/Wallet"]
+[node name="Button1" type="Button" parent="UI/Wallet"]
 offset_left = 798.0
 offset_top = 16.0
 offset_right = 838.0
 offset_bottom = 56.0
 text = "+ 1"
 
-[node name="Button2" type="Button" parent="Player/Wallet"]
+[node name="Button2" type="Button" parent="UI/Wallet"]
 offset_left = 846.0
 offset_top = 16.0
 offset_right = 886.0
 offset_bottom = 56.0
 text = "+5"
 
-[node name="Button3" type="Button" parent="Player/Wallet"]
+[node name="Button3" type="Button" parent="UI/Wallet"]
 offset_left = 942.0
 offset_top = 16.0
 offset_right = 982.0
 offset_bottom = 56.0
 text = "-1"
 
-[node name="Button4" type="Button" parent="Player/Wallet"]
+[node name="Button4" type="Button" parent="UI/Wallet"]
 offset_left = 894.0
 offset_top = 16.0
 offset_right = 933.0
 offset_bottom = 56.0
 text = "-5"
 
-[connection signal="pressed" from="Player/Wallet/Button1" to="Player/Wallet" method="_on_button_pressed"]
+[connection signal="pressed" from="UI/Wallet/Button1" to="UI/Wallet" method="_on_button_pressed"]
