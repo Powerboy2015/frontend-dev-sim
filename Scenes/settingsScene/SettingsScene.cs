@@ -37,7 +37,7 @@ public partial class SettingsScene : Control
 		// Ja pak die singleton ook hier erbij
 		_config = GetNode<ConfigManager>("/root/ConfigManager");
 		
-		var baseDir = "VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Settings/";
+		var baseDir = "MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Settings/";
 		
 		// Get UI elements
 		_resInput = GetNode<OptionButton>(baseDir + "Screen/Resolution/OptionButton");
@@ -59,6 +59,12 @@ public partial class SettingsScene : Control
 		_interactButton = GetNode<KeyBindButton>(baseDir + "Controls/HBoxContainer/Other/Interact/Button");
 		_menuButton = GetNode<KeyBindButton>(baseDir + "Controls/HBoxContainer/Other/Menu/Button");
 		
+		// Fullscreen toggle - enable/disable resolution dropdown
+		_fullscreenButton.Toggled += (bool toggled) =>
+		{
+			_resInput.Disabled = toggled;
+		};
+
 		_masterSlider.ValueChanged += (double value) =>
 		{
 			AudioServer.SetBusVolumeDb(0, (float)value);
@@ -75,11 +81,11 @@ public partial class SettingsScene : Control
 		};
 		
 		// Save button
-		GetNode<Button>("VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/SaveButton").Pressed += () =>
+		GetNode<Button>("MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/SaveButton").Pressed += () =>
 		{
 			SaveSettings();
 			// Show the label
-			var savedLabel = GetNode<Label>("VBoxContainer/PanelContainer/MarginContainer/SavedLabel");
+			var savedLabel = GetNode<Label>("MarginContainer/VBoxContainer/PanelContainer/MarginContainer/SavedLabel");
 			savedLabel.Show();
 		};
 		
@@ -95,11 +101,14 @@ public partial class SettingsScene : Control
 	
 	private void SaveSettings()
 	{
-		// Save resolution
-		_config.SetResolution(RESOLUTIONS[_resInput.Selected]);
-
-		// Save fullscreen
+		// Save fullscreen first
 		GetWindow().Mode = _fullscreenButton.ButtonPressed ? Window.ModeEnum.Fullscreen : Window.ModeEnum.Windowed;
+
+		// Only save resolution if not in fullscreen
+		if (GetWindow().Mode != Window.ModeEnum.Fullscreen)
+		{
+			_config.SetResolution(RESOLUTIONS[_resInput.Selected]);
+		}
 
 		// Save bindings
 		_config.SetControl("MoveUp", (int)_upButton.CurrentKey);
@@ -124,7 +133,9 @@ public partial class SettingsScene : Control
 		}
 		
 		// Update fullscreen
-		_fullscreenButton.ButtonPressed = GetWindow().Mode == Window.ModeEnum.Fullscreen;
+		bool isFullscreen = GetWindow().Mode == Window.ModeEnum.Fullscreen;
+		_fullscreenButton.ButtonPressed = isFullscreen;
+		_resInput.Disabled = isFullscreen;
 		
 		// Update audio
 		_masterSlider.Value = AudioServer.GetBusVolumeDb(0);
