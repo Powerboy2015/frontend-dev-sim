@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://d27g11eojmfrk"]
+
+[ext_resource type="Script" uid="uid://cg7iyuq1ouiw6" path="res://Panel.cs" id="1_viryw"]
+[ext_resource type="Texture2D" uid="uid://bspalxsqd3c5m" path="res://Sprites/close.png" id="2_6lah5"]
+[ext_resource type="Script" uid="uid://b2yjukpf88mrw" path="res://Item.cs" id="2_blqjs"]
+[ext_resource type="Texture2D" uid="uid://dwhwg3xp0g4wx" path="res://Sprites/computer.png" id="2_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://hde2wq0fo3rg" path="res://Sprites/basket.png" id="3_fgaav"]
+
+[node name="Buy Computer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 304.0
+offset_top = 32.0
+offset_right = 648.0
+offset_bottom = 496.0
+script = ExtResource("1_viryw")
+
+[node name="Close" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.001
+anchor_bottom = 0.002
+offset_left = 292.0
+offset_top = 8.0
+offset_right = 329.656
+offset_bottom = 42.072
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Close"]
+position = Vector2(18.999975, 17.562508)
+scale = Vector2(0.06597221, 0.06035225)
+texture = ExtResource("2_6lah5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(176, 208)
+scale = Vector2(0.63625306, 0.6904762)
+texture = ExtResource("2_e7rdd")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 352.0
+offset_right = 304.0
+offset_bottom = 384.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Button"]
+position = Vector2(16, 16)
+scale = Vector2(0.052721087, 0.06451613)
+texture = ExtResource("3_fgaav")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 344.0
+offset_right = 253.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 30
+text = "Buy: 300 coins"
+
+[node name="Item" type="Button" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 183.0
+offset_right = 326.0
+offset_bottom = 242.0
+script = ExtResource("2_blqjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Item"]
+position = Vector2(31.000008, 31.250008)
+scale = Vector2(0.15085153, 0.20578231)
+texture = ExtResource("2_e7rdd")
+
+[connection signal="pressed" from="Panel/Close" to="Item" method="set_visible" binds= [true]]
+[connection signal="pressed" from="Panel/Close" to="Panel" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Item" to="Item" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Item" to="Panel" method="set_visible" binds= [true]]
