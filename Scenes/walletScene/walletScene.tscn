@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://iofljol036va"]
+[gd_scene load_steps=4 format=3 uid="uid://iofljol036va"]
 
 [ext_resource type="Script" uid="uid://dval56u7ymx7u" path="res://Scenes/walletScene/Wallet.cs" id="1_t3shf"]
 [ext_resource type="Texture2D" uid="uid://q4r02flr5puj" path="res://Sprites/wallet.png" id="2_ysgo6"]
+[ext_resource type="Script" uid="uid://bif5jq6pwq42l" path="res://Scenes/walletScene/Button1.cs" id="3_2agv4"]
 
 [node name="UI" type="Node2D"]
 
@@ -28,6 +29,7 @@ offset_top = 16.0
 offset_right = 838.0
 offset_bottom = 56.0
 text = "+ 1"
+script = ExtResource("3_2agv4")
 
 [node name="Button2" type="Button" parent="Wallet"]
 offset_left = 846.0
@@ -50,4 +52,4 @@ offset_right = 933.0
 offset_bottom = 56.0
 text = "-5"
 
-[connection signal="pressed" from="Wallet/Button1" to="Wallet" method="_on_button_pressed"]
+[connection signal="pressed" from="Wallet/Button1" to="Wallet/Button1" method="_on_pressed"]
