@@ -7,11 +7,15 @@
 script = ExtResource("1_jg6e1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(928, 61)
+position = Vector2(1045.0001, 25)
+scale = Vector2(0.2986112, 0.3554422)
 texture = ExtResource("2_mdu8u")
 
 [node name="MoneyLabel" type="Label" parent="."]
-offset_left = 1010.0
-offset_top = 9.0
-offset_right = 1190.0
-offset_bottom = 131.0
+offset_left = 1071.0
+offset_top = 8.0
+offset_right = 1125.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 30
+text = "0
+"
