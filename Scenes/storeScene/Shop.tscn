@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://e4p5fy0umqa1"]
+
+[ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://Scenes/playerScene/player.tscn" id="1_f511j"]
+[ext_resource type="PackedScene" uid="uid://cwha2u1yiirwn" path="res://Scenes/storeScene/shop_view.tscn" id="2_c0ofq"]
+[ext_resource type="PackedScene" uid="uid://d27g11eojmfrk" path="res://Scenes/storeScene/Buy_computer.tscn" id="3_svtxo"]
+
+[node name="main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_f511j")]
+z_index = 1
+position = Vector2(171, 482)
+Speed = 600.0
+
+[node name="shop-view" parent="." instance=ExtResource("2_c0ofq")]
+
+[node name="Buy computer" parent="." instance=ExtResource("3_svtxo")]

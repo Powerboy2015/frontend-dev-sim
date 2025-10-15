@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d27g11eojmfrk"]
 
-[ext_resource type="Script" uid="uid://cg7iyuq1ouiw6" path="res://Panel.cs" id="1_viryw"]
+[ext_resource type="Script" uid="uid://cg7iyuq1ouiw6" path="res://Scenes/storeScene/Panel.cs" id="1_viryw"]
 [ext_resource type="Texture2D" uid="uid://bspalxsqd3c5m" path="res://Sprites/close.png" id="2_6lah5"]
-[ext_resource type="Script" uid="uid://b2yjukpf88mrw" path="res://Item.cs" id="2_blqjs"]
+[ext_resource type="Script" uid="uid://b2yjukpf88mrw" path="res://Scenes/storeScene/Item.cs" id="2_blqjs"]
 [ext_resource type="Texture2D" uid="uid://dwhwg3xp0g4wx" path="res://Sprites/computer.png" id="2_e7rdd"]
 [ext_resource type="Texture2D" uid="uid://hde2wq0fo3rg" path="res://Sprites/basket.png" id="3_fgaav"]
 
