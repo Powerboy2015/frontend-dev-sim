@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://vfyqme0km0sx"]
+
+[ext_resource type="Texture2D" uid="uid://bbghcd74nk8g4" path="res://Room2.jpg" id="1_uigq4"]
+[ext_resource type="Texture2D" uid="uid://bge6nmnarhhof" path="res://image.png" id="2_e7hwi"]
+[ext_resource type="Script" uid="uid://dkgks1ln8453f" path="res://player.gd" id="2_r5436"]
+[ext_resource type="Texture2D" uid="uid://du44lttr542wj" path="res://deur.png" id="3_e7hwi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5436"]
+size = Vector2(50, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7hwi"]
+size = Vector2(92, 91)
+
+[node name="Room2" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(564, 327)
+texture = ExtResource("1_uigq4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(572, 323)
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(12, 19)
+script = ExtResource("2_r5436")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(562, 309)
+shape = SubResource("RectangleShape2D_r5436")
+disabled = true
+debug_color = Color(0.92053455, 0.2198807, 0.45164216, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+position = Vector2(562.00006, 307.00003)
+scale = Vector2(0.119680956, 0.12276788)
+texture = ExtResource("2_e7hwi")
+
+[node name="Door to roomview" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door to roomview"]
+position = Vector2(529, 481.5)
+shape = SubResource("RectangleShape2D_e7hwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door to roomview"]
+position = Vector2(527.875, 480.875)
+scale = Vector2(0.123744614, 0.12823439)
+texture = ExtResource("3_e7hwi")
