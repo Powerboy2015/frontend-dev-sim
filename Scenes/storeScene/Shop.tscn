@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://e4p5fy0umqa1"]
+[gd_scene load_steps=6 format=3 uid="uid://e4p5fy0umqa1"]
 
 [ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://Scenes/playerScene/player.tscn" id="1_f511j"]
 [ext_resource type="PackedScene" uid="uid://cwha2u1yiirwn" path="res://Scenes/storeScene/shop_view.tscn" id="2_c0ofq"]
 [ext_resource type="PackedScene" uid="uid://d27g11eojmfrk" path="res://Scenes/storeScene/Buy_computer.tscn" id="3_svtxo"]
+[ext_resource type="PackedScene" uid="uid://iofljol036va" path="res://Scenes/gameScene/gameScene.tscn" id="4_q7dox"]
+[ext_resource type="PackedScene" uid="uid://dd87aqp8qyeeh" path="res://Scenes/HUD/HUD.tscn" id="5_dlomg"]
 
 [node name="main" type="Node2D"]
 
@@ -14,3 +16,7 @@ Speed = 600.0
 [node name="shop-view" parent="." instance=ExtResource("2_c0ofq")]
 
 [node name="Buy computer" parent="." instance=ExtResource("3_svtxo")]
+
+[node name="UI" parent="." instance=ExtResource("4_q7dox")]
+
+[node name="HUD" parent="." instance=ExtResource("5_dlomg")]

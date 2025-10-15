@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd87aqp8qyeeh"]
+
+[ext_resource type="Script" uid="uid://d0fhdau8k1x1b" path="res://Scenes/HUD/HUD.cs" id="1_jg6e1"]
+[ext_resource type="Texture2D" uid="uid://q4r02flr5puj" path="res://Sprites/wallet.png" id="2_mdu8u"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_jg6e1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(928, 61)
+texture = ExtResource("2_mdu8u")
+
+[node name="MoneyLabel" type="Label" parent="."]
+offset_left = 1010.0
+offset_top = 9.0
+offset_right = 1190.0
+offset_bottom = 131.0
