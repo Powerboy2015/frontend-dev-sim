@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2b7c2gmdfqll"
-path="res://.godot/imported/wallet.png-cfeeb1d2b77ea8261d2a33520d7f66e1.ctex"
+uid="uid://b72eivcs0n6cs"
+path="res://.godot/imported/wall.png-9b0e8f0ce8f6ab21260c2b1286395d20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/wallet.png"
-dest_files=["res://.godot/imported/wallet.png-cfeeb1d2b77ea8261d2a33520d7f66e1.ctex"]
+source_file="res://Sprites/wall.png"
+dest_files=["res://.godot/imported/wall.png-9b0e8f0ce8f6ab21260c2b1286395d20.ctex"]
 
 [params]
 
