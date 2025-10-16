@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://eo3banav5exb"]
+
+[ext_resource type="Script" uid="uid://dval56u7ymx7u" path="res://Scenes/wallet/Wallet.cs" id="1_qptav"]
+
+[node name="Wallet" type="Node2D"]
+script = ExtResource("1_qptav")
