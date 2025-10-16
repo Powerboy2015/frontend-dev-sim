@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ber2pgjda3gn7"]
+
+[ext_resource type="Texture2D" uid="uid://c2dj04pvt4hk8" path="res://assets/sprites/playerCharacter.png" id="1_oil66"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture_filter = 3
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_oil66")
+
+[node name="Area2D" type="Area2D" parent="."]
+show_behind_parent = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+show_behind_parent = true
+polygon = PackedVector2Array(4, -14.666667, -8, -14.666667, -8, -2.6666667, -8, -1.3333334, -8, 16, 8, 16, 8, 0.39999962, 8, -2.6666667, 8, -10.666667)

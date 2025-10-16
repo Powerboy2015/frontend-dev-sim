@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://iofljol036va"]
+[gd_scene load_steps=4 format=3 uid="uid://ctllufod0n400"]
 
-[ext_resource type="Texture2D" uid="uid://bnsrp6pad77sy" path="res://sprites/Tree.png" id="1_2c717"]
-[ext_resource type="Script" uid="uid://bmw5pgfsyv43j" path="res://Scenes/Wallet.cs" id="2_hewda"]
+[ext_resource type="Texture2D" uid="uid://bnsrp6pad77sy" path="res://assets/sprites/Tree.png" id="1_2c717"]
+[ext_resource type="Script" path="res://Scenes/Wallet.cs" id="2_hewda"]
 [ext_resource type="Texture2D" uid="uid://2b7c2gmdfqll" path="res://sprites/wallet.png" id="2_ly6xb"]
 
 [node name="Node2D" type="Node2D"]

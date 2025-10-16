@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bucego1d3aivp"
-path="res://.godot/imported/wallet.png-cfeeb1d2b77ea8261d2a33520d7f66e1.ctex"
+uid="uid://byqj6mi2n87jq"
+path="res://.godot/imported/WorldMap.png-34c38c9cf71642f81cbdc6946f621f24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/wallet.png"
-dest_files=["res://.godot/imported/wallet.png-cfeeb1d2b77ea8261d2a33520d7f66e1.ctex"]
+source_file="res://assets/sprites/WorldMap.png"
+dest_files=["res://.godot/imported/WorldMap.png-34c38c9cf71642f81cbdc6946f621f24.ctex"]
 
 [params]
 

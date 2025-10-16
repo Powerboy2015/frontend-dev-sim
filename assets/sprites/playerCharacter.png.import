@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bucego1d3aivp"
-path="res://.godot/imported/wallet.png-cfeeb1d2b77ea8261d2a33520d7f66e1.ctex"
+uid="uid://c2dj04pvt4hk8"
+path="res://.godot/imported/playerCharacter.png-d25d76f13e74d57404296db7c454dcf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/wallet.png"
-dest_files=["res://.godot/imported/wallet.png-cfeeb1d2b77ea8261d2a33520d7f66e1.ctex"]
+source_file="res://assets/sprites/playerCharacter.png"
+dest_files=["res://.godot/imported/playerCharacter.png-d25d76f13e74d57404296db7c454dcf8.ctex"]
 
 [params]
 
