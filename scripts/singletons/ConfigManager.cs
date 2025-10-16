@@ -40,8 +40,8 @@ public partial class ConfigManager : Node
 	{
 		// Screen settings
 		var window = GetWindow();
-		CF.SetValue("Screen", "ResolutionWidth", window.Size.X);
-		CF.SetValue("Screen", "ResolutionHeight", window.Size.Y);
+		CF.SetValue("Screen", "ResolutionWidth", window.ContentScaleSize.X);
+		CF.SetValue("Screen", "ResolutionHeight", window.ContentScaleSize.Y);
 		CF.SetValue("Screen", "Fullscreen", window.Mode == Window.ModeEnum.Fullscreen);
 		
 		// Sound settings
@@ -150,6 +150,8 @@ public partial class ConfigManager : Node
 		var size = ParseResolution(resolution);
 		CF.SetValue("Screen", "ResolutionWidth", size.X);
 		CF.SetValue("Screen", "ResolutionHeight", size.Y);
-		GetWindow().Size = size;
+
+		var window = GetWindow();
+		window.Size = size;
 	}
 }
