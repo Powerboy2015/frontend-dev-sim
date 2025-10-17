@@ -51,6 +51,13 @@ public partial class SettingsScene : Control
 		_musicSlider = GetNode<HSlider>(baseDir + "Sound/Music/HSlider");
 		_sfxSlider = GetNode<HSlider>(baseDir + "Sound/SFX/HSlider");
 		
+		_masterSlider.MinValue = 0;
+		_masterSlider.MaxValue = 100;
+		_musicSlider.MinValue = 0;
+		_musicSlider.MaxValue = 100;
+		_sfxSlider.MinValue = 0;
+		_sfxSlider.MaxValue = 100;
+		
 		// Keybind stuff ofzo
 		_upButton = GetNode<KeyBindButton>(baseDir + "Controls/HBoxContainer/Movement/MoveUp/Button");
 		_downButton = GetNode<KeyBindButton>(baseDir + "Controls/HBoxContainer/Movement/MoveDown/Button");
@@ -64,25 +71,26 @@ public partial class SettingsScene : Control
 		{
 			_resInput.Disabled = toggled;
 		};
-
+		
 		_masterSlider.ValueChanged += (double value) =>
 		{
-			AudioServer.SetBusVolumeDb(0, (float)value);
+			AudioHandler.Instance.SetBusVolume("Master", (float)value);
 		};
 		
 		_musicSlider.ValueChanged += (double value) =>
 		{
-			AudioServer.SetBusVolumeDb(1, (float)value);
+			AudioHandler.Instance.SetBusVolume("Music", (float)value);
 		};
 		
 		_sfxSlider.ValueChanged += (double value) =>
 		{
-			AudioServer.SetBusVolumeDb(2, (float)value);
+			AudioHandler.Instance.SetBusVolume("SFX", (float)value);
 		};
 		
 		// Save button
 		GetNode<Button>("MarginContainer/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/SaveButton").Pressed += () =>
 		{
+			AudioHandler.Instance.PlaySFX(SFXType.Click);
 			SaveSettings();
 			// Show the label
 			var savedLabel = GetNode<Label>("MarginContainer/VBoxContainer/PanelContainer/MarginContainer/SavedLabel");
@@ -90,13 +98,36 @@ public partial class SettingsScene : Control
 		};
 		
 		// Back button
-		GetNode<Button>("BackButton").Pressed += () =>
+		GetNode<Button>("MarginContainer/BackButton").Pressed += () =>
 		{
+			AudioHandler.Instance.PlaySFX(SFXType.Click);
 			GetTree().ChangeSceneToFile("res://scenes/menuScene/menuScene.tscn");
 		};
 		
 		// Update UI with loaded values
 		UpdateUIFromConfig();
+	}
+	
+	// Convert linear volume (0-100) to decibels (-80 to 0)
+	private float LinearToDb(float linear)
+	{
+		if (linear <= 0)
+			return -80.0f; // Mute
+		
+		// Convert 0-100 to 0-1 range, then to dB
+		float normalized = linear / 100.0f;
+		return Mathf.LinearToDb(normalized);
+	}
+	
+	// Convert decibels to linear volume (0-100)
+	private float DbToLinear(float db)
+	{
+		if (db <= -80.0f)
+			return 0.0f; // Muted
+			
+		// Convert dB to 0-1 range, then to 0-100
+		float normalized = Mathf.DbToLinear(db);
+		return normalized * 100.0f;
 	}
 	
 	private void SaveSettings()
@@ -109,7 +140,7 @@ public partial class SettingsScene : Control
 		{
 			_config.SetResolution(RESOLUTIONS[_resInput.Selected]);
 		}
-
+		
 		// Save bindings
 		_config.SetControl("MoveUp", (int)_upButton.CurrentKey);
 		_config.SetControl("MoveDown", (int)_downButton.CurrentKey);
@@ -126,7 +157,7 @@ public partial class SettingsScene : Control
 		// Update resolution
 		var currentRes = _config.GetResolutionString();
 		int resIndex = Array.IndexOf(RESOLUTIONS, currentRes);
-
+		
 		if (resIndex >= 0)
 		{
 			_resInput.Selected = resIndex;
@@ -138,10 +169,10 @@ public partial class SettingsScene : Control
 		_resInput.Disabled = isFullscreen;
 		
 		// Update audio
-		_masterSlider.Value = AudioServer.GetBusVolumeDb(0);
-		_musicSlider.Value = AudioServer.GetBusVolumeDb(1);
-		_sfxSlider.Value = AudioServer.GetBusVolumeDb(2);
-
+		_masterSlider.Value = AudioHandler.Instance.GetBusVolume("Master");
+		_musicSlider.Value = AudioHandler.Instance.GetBusVolume("Music");
+		_sfxSlider.Value = AudioHandler.Instance.GetBusVolume("SFX");
+		
 		// Update keybinds
 		_upButton.CurrentKey = (Key)_config.GetControl("MoveUp");
 		_downButton.CurrentKey = (Key)_config.GetControl("MoveDown");
