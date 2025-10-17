@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfklnnedcx1w3"]
 
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_vi0ng"]
-[ext_resource type="Script" uid="uid://r5jnftw6yt6i" path="res://scenes/settingsScene/SettingsScene.cs" id="1_yfv3e"]
-[ext_resource type="Script" uid="uid://b05tuurhuumdw" path="res://scenes/settingsScene/KeyBindButton.cs" id="3_mk0q3"]
+[ext_resource type="Script" uid="uid://r5jnftw6yt6i" path="res://Scenes/menuScene/settingsScene/SettingsScene.cs" id="1_yfv3e"]
+[ext_resource type="Script" uid="uid://b05tuurhuumdw" path="res://Scenes/menuScene/settingsScene/KeyBindButton.cs" id="3_mk0q3"]
 
 [node name="SettingsScene" type="Control"]
 layout_mode = 3
@@ -35,15 +35,6 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
-
-[node name="BackButton" type="Button" parent="MarginContainer"]
-custom_minimum_size = Vector2(150, 70)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 10
-theme_override_fonts/font = ExtResource("1_vi0ng")
-theme_override_font_sizes/font_size = 36
-text = "Back"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -392,3 +383,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.14901961)
 theme_override_fonts/font = ExtResource("1_vi0ng")
 theme_override_font_sizes/font_size = 24
 text = "Settings have been saved!"
+
+[node name="BackButton" type="Button" parent="MarginContainer"]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("1_vi0ng")
+theme_override_font_sizes/font_size = 36
+text = "Back"
