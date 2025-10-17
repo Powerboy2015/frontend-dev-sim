@@ -1,0 +1,140 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxxprjn63ax0a"]
+
+[ext_resource type="Script" uid="uid://wp1055bf0pog" path="res://Scenes/menuScene/creditsScene/CreditsScene.cs" id="1_dx41c"]
+[ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_e1dcl"]
+
+[node name="HowToPlayScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_dx41c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.76862746, 1, 0.972549, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_fonts/font = ExtResource("2_e1dcl")
+theme_override_font_sizes/font_size = 96
+text = "Credits"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 400.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Developers" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer/HBoxContainer/Developers"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_e1dcl")
+theme_override_font_sizes/font_size = 36
+text = "Developers:"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer/HBoxContainer/Developers"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_e1dcl")
+theme_override_font_sizes/font_size = 32
+text = "Kjetil van Gasteren
+Thian Gräber
+Lars Konermann
+Zico Backer
+Nahom Yacob"
+
+[node name="Sound" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer/HBoxContainer/Sound"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_e1dcl")
+theme_override_font_sizes/font_size = 36
+text = "Sound Design:"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer/HBoxContainer/Sound"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_e1dcl")
+theme_override_font_sizes/font_size = 32
+text = "Thian Gräber"
+
+[node name="Visual" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer/HBoxContainer/Visual"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_e1dcl")
+theme_override_font_sizes/font_size = 36
+text = "Visual Design:"
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ColorRect/MarginContainer/HBoxContainer/Visual"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_e1dcl")
+theme_override_font_sizes/font_size = 32
+text = "Zico Backer"
+
+[node name="BackButton" type="Button" parent="MarginContainer"]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_e1dcl")
+theme_override_font_sizes/font_size = 36
+text = "Back"
