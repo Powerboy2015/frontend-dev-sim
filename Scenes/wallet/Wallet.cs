@@ -20,7 +20,7 @@ public partial class Wallet : Node2D
 
 	public void RemoveCoins(int amount)
 	{
-		if (Coins - amount > 0)
+		if (Coins - amount >= 0)
 		{
 			Coins -= amount;
 		}
