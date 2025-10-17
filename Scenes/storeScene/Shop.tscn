@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://e4p5fy0umqa1"]
+[gd_scene load_steps=11 format=3 uid="uid://e4p5fy0umqa1"]
 
 [ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://Scenes/playerScene/player.tscn" id="1_f511j"]
 [ext_resource type="PackedScene" uid="uid://cwha2u1yiirwn" path="res://Scenes/storeScene/shop_view.tscn" id="2_c0ofq"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://6lo0ia0clko6" path="res://Scenes/BuyItems/Plant1/Plant1.tscn" id="6_mu3km"]
 [ext_resource type="PackedScene" uid="uid://3ydabm8er84k" path="res://Scenes/BuyItems/Plant2/Plant2.tscn" id="7_o7a2t"]
 [ext_resource type="PackedScene" uid="uid://7giovy5kdh3h" path="res://Scenes/BuyItems/Plant3/Plant3.tscn" id="8_m8r1y"]
+[ext_resource type="PackedScene" uid="uid://7e10tpgviffa" path="res://Scenes/BuyItems/Plant4/Plant4.tscn" id="9_3ikb8"]
+[ext_resource type="PackedScene" uid="uid://ut5glvcqx7xj" path="res://Scenes/BuyItems/Plant5/Plant5.tscn" id="10_nqtt6"]
 
 [node name="main" type="Node2D"]
 
@@ -19,10 +21,10 @@ Speed = 600.0
 [node name="shop-view" parent="." instance=ExtResource("2_c0ofq")]
 
 [node name="BuyComputer" parent="." instance=ExtResource("3_svtxo")]
-offset_left = 296.0
-offset_top = 211.0
-offset_right = 325.0
-offset_bottom = 211.0
+offset_left = 293.0
+offset_top = 212.0
+offset_right = 322.0
+offset_bottom = 212.0
 
 [node name="HUD" parent="." instance=ExtResource("5_dlomg")]
 
@@ -30,10 +32,10 @@ offset_bottom = 211.0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 394.0
-offset_top = 213.0
-offset_right = 394.0
-offset_bottom = 213.0
+offset_left = 367.0
+offset_top = 214.0
+offset_right = 367.0
+offset_bottom = 214.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -59,3 +61,20 @@ offset_left = 183.0
 offset_top = 210.0
 offset_right = 183.0
 offset_bottom = 210.0
+
+[node name="Plant4" parent="." instance=ExtResource("9_3ikb8")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 47.0
+offset_top = 274.0
+offset_right = 47.0
+offset_bottom = 274.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Plant5" parent="." instance=ExtResource("10_nqtt6")]
+offset_left = 116.0
+offset_top = 272.0
+offset_right = 116.0
+offset_bottom = 272.0
