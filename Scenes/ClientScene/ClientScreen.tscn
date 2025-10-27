@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c5rra4ti70jl8" path="res://Scenes/ClientScene/AddClients.cs" id="1_kv485"]
 [ext_resource type="PackedScene" uid="uid://dv01iimy0w53g" path="res://Scenes/ClientScene/ClientBaseScene.tscn" id="2_1471c"]
-[ext_resource type="Resource" uid="uid://cb3vkpgoongut" path="res://Resources/Clients/lily.tres" id="3_1pwuu"]
-[ext_resource type="Resource" uid="uid://0bcrd235vbq1" path="res://Resources/Clients/thomas.tres" id="4_qman7"]
+[ext_resource type="Resource" uid="uid://cb3vkpgoongut" path="res://Resources/Clients/Lily.tres" id="3_1pwuu"]
+[ext_resource type="Resource" uid="uid://0bcrd235vbq1" path="res://Resources/Clients/Thomas.tres" id="4_qman7"]
 
 [node name="ClientScreen" type="Control"]
 layout_mode = 3

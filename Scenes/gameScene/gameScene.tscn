@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://iofljol036va"]
+[gd_scene load_steps=3 format=3 uid="uid://iofljol036va"]
 
 [ext_resource type="Texture2D" uid="uid://bnsrp6pad77sy" path="res://assets/sprites/Tree.png" id="1_ehhdl"]
+[ext_resource type="PackedScene" uid="uid://c4qii8p35ld4u" path="res://Scenes/ClientScene/ClientScreen.tscn" id="2_cp5gj"]
 
 [node name="Node2D" type="Node2D"]
+texture_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -20,3 +22,5 @@ position = Vector2(218, 614)
 texture = ExtResource("1_ehhdl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ClientScreen" parent="CanvasLayer" instance=ExtResource("2_cp5gj")]

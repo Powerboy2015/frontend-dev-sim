@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbo5lgdbcx48x" path="res://Scenes/menuScene/MenuScene.cs" id="1_2q8gc"]
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_f05m2"]
-[ext_resource type="Script" uid="uid://domo7jd2j6c2t" path="res://Scenes/menuScene/ConfigINI.cs" id="3_f05m2"]
+[ext_resource type="Script" uid="uid://cbo5lgdbcx48x" path="res://Scenes/menuScene/MenuScene.cs" id="3_f05m2"]
 
 [node name="MenuScene" type="Control"]
 layout_mode = 3

@@ -1,4 +1,7 @@
-[gd_scene load_steps=0 format=3 uid="uid://dv01iimy0w53g"]
+[gd_scene load_steps=3 format=3 uid="uid://dv01iimy0w53g"]
+
+[ext_resource type="Script" uid="uid://dhprfdeg1tcbb" path="res://Scenes/ClientScene/ChooseClient.cs" id="1_2d46w"]
+[ext_resource type="PackedScene" uid="uid://bd8wls15d2u7" path="res://Scenes/DevScene/DevScreen.tscn" id="2_b7hc7"]
 
 [node name="clientBase" type="Control"]
 custom_minimum_size = Vector2(0, 170)
@@ -8,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2d46w")
+baller = ExtResource("2_b7hc7")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(0, 170)
@@ -55,3 +60,5 @@ anchor_bottom = 0.7
 grow_horizontal = 2
 grow_vertical = 2
 text = "help placeholder"
+
+[connection signal="pressed" from="Panel/Button" to="." method="ChosenClient"]

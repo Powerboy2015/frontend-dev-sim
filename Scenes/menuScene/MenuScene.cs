@@ -4,16 +4,16 @@ using System;
 public partial class MenuScene : Control
 {
 	[Export] private NodePath ConfigNodePath;
-	private ConfigINI _config;
+	// private ConfigINI _config;
 	public override void _Ready()
 	{
-		_config = GetNodeOrNull<ConfigINI>(ConfigNodePath);
-		if (_config == null)
-		{
-			GD.PushError("ConfigINI not found. Assign ConfigNodePath in the Inspector.");
-			return;
-		}
-		_config.OnLoad();
+		// _config = GetNodeOrNull<ConfigINI>(ConfigNodePath);
+		// if (_config == null)
+		// {
+		// 	GD.PushError("ConfigINI not found. Assign ConfigNodePath in the Inspector.");
+		// 	return;
+		// }
+		// _config.OnLoad();
 		
 		GetNode<Button>("VBoxContainer/StartButton").Pressed += () =>
 		{
