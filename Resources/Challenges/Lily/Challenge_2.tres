@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_l77w2")
-Code = "<html>\\n\\t<body>\\n\\t\\t<h1>h"
+Code = "<html>\\n\\t<body>\\n\\t\\t<h1>hello world</h1>\\n\\t</body>\\n</html>"
 metadata/_custom_type_script = "uid://dirskmlr28wt1"
