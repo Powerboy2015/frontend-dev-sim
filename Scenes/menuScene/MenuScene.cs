@@ -3,35 +3,38 @@ using System;
 
 public partial class MenuScene : Control
 {
-	[Export] private NodePath ConfigNodePath;
-	// private ConfigINI _config;
 	public override void _Ready()
 	{
-		// _config = GetNodeOrNull<ConfigINI>(ConfigNodePath);
-		// if (_config == null)
-		// {
-		// 	GD.PushError("ConfigINI not found. Assign ConfigNodePath in the Inspector.");
-		// 	return;
-		// }
-		// _config.OnLoad();
+		// Hoppa pak die singleton erbij
+		var config = GetNode<ConfigManager>("/root/ConfigManager");
 		
-		GetNode<Button>("VBoxContainer/StartButton").Pressed += () =>
+		GetNode<Button>("MarginContainer/VBoxContainer/VBoxContainer/StartButton").Pressed += () =>
 		{
-			GetTree().ChangeSceneToFile("res://Scenes/gameScene/gameScene.tscn");
+			AudioHandler.Instance.PlaySFX(SFXType.Click);
+			GetTree().ChangeSceneToFile("res://scenes/gameScene/gameScene.tscn");
 		};
 		
-		GetNode<Button>("VBoxContainer/SettingsButton").Pressed += () =>
+		GetNode<Button>("MarginContainer/VBoxContainer/VBoxContainer/SettingsButton").Pressed += () =>
 		{
-			GetTree().ChangeSceneToFile("res://Scenes/settingsScene/settingsScene.tscn");
+			AudioHandler.Instance.PlaySFX(SFXType.Click);
+			GetTree().ChangeSceneToFile("res://scenes/menuScene/settingsScene/settingsScene.tscn");
 		};
 		
-		GetNode<Button>("VBoxContainer/HowToPlayButton").Pressed += () =>
+		GetNode<Button>("MarginContainer/VBoxContainer/VBoxContainer/HowToPlayButton").Pressed += () =>
 		{
-			GetTree().ChangeSceneToFile("res://Scenes/howToPlayScene/howToPlayScene.tscn");
+			AudioHandler.Instance.PlaySFX(SFXType.Click);
+			GetTree().ChangeSceneToFile("res://scenes/menuScene/howToPlayScene/howToPlayScene.tscn");
 		};
 		
-		GetNode<Button>("VBoxContainer/QuitButton").Pressed += () =>
+		GetNode<Button>("MarginContainer/VBoxContainer/VBoxContainer/CreditsButton").Pressed += () =>
 		{
+			AudioHandler.Instance.PlaySFX(SFXType.Click);
+			GetTree().ChangeSceneToFile("res://scenes/menuScene/creditsScene/creditsScene.tscn");
+		};
+		
+		GetNode<Button>("MarginContainer/VBoxContainer/VBoxContainer/QuitButton").Pressed += () =>
+		{
+			AudioHandler.Instance.PlaySFX(SFXType.Click);
 			GetTree().Quit();
 		};
 	}
