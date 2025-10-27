@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ClientBase" load_steps=5 format=3 uid="uid://cb3vkpgoongut"]
 
 [ext_resource type="Script" uid="uid://b7wxpjrhntokw" path="res://Resources/Resource_Classes/ClientBase.cs" id="1_7ts5k"]
-[ext_resource type="Texture2D" uid="uid://dkjv0vlygkhn" path="res://icon.svg" id="1_xr4yi"]
+[ext_resource type="Texture2D" uid="uid://swjf4nd0qpvn" path="res://icon.svg" id="1_xr4yi"]
 [ext_resource type="Resource" uid="uid://bpn7lphmr3511" path="res://Resources/Challenges/Lily/Challenge_1.tres" id="2_38scj"]
 [ext_resource type="Resource" uid="uid://b2do6xc11hwuc" path="res://Resources/Challenges/Lily/Challenge_2.tres" id="3_l70cy"]
 

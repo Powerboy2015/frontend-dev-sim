@@ -7,22 +7,19 @@
 texture_filter = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(34, 614)
-texture = ExtResource("1_l70v6")
+texture = ExtResource("1_ehhdl")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(124, 616)
-texture = ExtResource("1_l70v6")
+texture = ExtResource("1_ehhdl")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(218, 614)
-texture = ExtResource("1_l70v6")
+texture = ExtResource("1_ehhdl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
