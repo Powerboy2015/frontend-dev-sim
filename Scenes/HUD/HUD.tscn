@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ddtty48o73ngl" path="res://scenes/HUD/pauseMenu/pauseMenu.tscn" id="3_43lqu"]
 
 [node name="HUD" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_jg6e1")
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_43lqu")]

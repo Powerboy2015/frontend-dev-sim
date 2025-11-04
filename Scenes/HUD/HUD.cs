@@ -23,13 +23,13 @@ public partial class HUD : CanvasLayer
 			{
 				// Hide menu
 				GD.Print("Menu Close");
-				AudioHandler.Instance.PlaySFX(SFXType.Click);
 				menu.Hide();
+				GetTree().Paused = false;
 			} else {
 				// Show menu
 				GD.Print("Menu Open");
-				AudioHandler.Instance.PlaySFX(SFXType.Click);
 				menu.Show();
+				GetTree().Paused = true;
 			}
 		}
 		
