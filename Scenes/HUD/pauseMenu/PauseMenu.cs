@@ -8,4 +8,9 @@ public partial class PauseMenu : CanvasLayer
 		
 	}
 	
+	public override void _Process(double delta)
+	{
+		
+	}
+	
 }
