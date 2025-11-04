@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://Scenes/playerScene/player.tscn" id="1_f511j"]
 [ext_resource type="PackedScene" uid="uid://cwha2u1yiirwn" path="res://Scenes/storeScene/shop_view.tscn" id="2_c0ofq"]
-[ext_resource type="PackedScene" uid="uid://d27g11eojmfrk" path="res://Scenes/BuyItems/Buy_computer.tscn" id="3_svtxo"]
+[ext_resource type="PackedScene" uid="uid://d27g11eojmfrk" path="res://Scenes/storeScene/BuyItems/Buy_computer.tscn" id="3_svtxo"]
 [ext_resource type="PackedScene" uid="uid://dd87aqp8qyeeh" path="res://Scenes/HUD/HUD.tscn" id="5_dlomg"]
-[ext_resource type="PackedScene" uid="uid://u8iysljyfyrs" path="res://Scenes/BuyItems/BuyHat.tscn" id="5_mu3km"]
-[ext_resource type="PackedScene" uid="uid://6lo0ia0clko6" path="res://Scenes/BuyItems/Plant1.tscn" id="6_mu3km"]
-[ext_resource type="PackedScene" uid="uid://3ydabm8er84k" path="res://Scenes/BuyItems/Plant2.tscn" id="7_o7a2t"]
-[ext_resource type="PackedScene" uid="uid://7giovy5kdh3h" path="res://Scenes/BuyItems/Plant3.tscn" id="8_m8r1y"]
-[ext_resource type="PackedScene" uid="uid://7e10tpgviffa" path="res://Scenes/BuyItems/Plant4.tscn" id="9_3ikb8"]
-[ext_resource type="PackedScene" uid="uid://ut5glvcqx7xj" path="res://Scenes/BuyItems/Plant5.tscn" id="10_nqtt6"]
+[ext_resource type="PackedScene" uid="uid://u8iysljyfyrs" path="res://Scenes/storeScene/BuyItems/BuyHat.tscn" id="5_mu3km"]
+[ext_resource type="PackedScene" uid="uid://6lo0ia0clko6" path="res://Scenes/storeScene/BuyItems/Plant1.tscn" id="6_mu3km"]
+[ext_resource type="PackedScene" uid="uid://3ydabm8er84k" path="res://Scenes/storeScene/BuyItems/Plant2.tscn" id="7_o7a2t"]
+[ext_resource type="PackedScene" uid="uid://7giovy5kdh3h" path="res://Scenes/storeScene/BuyItems/Plant3.tscn" id="8_m8r1y"]
+[ext_resource type="PackedScene" uid="uid://7e10tpgviffa" path="res://Scenes/storeScene/BuyItems/Plant4.tscn" id="9_3ikb8"]
+[ext_resource type="PackedScene" uid="uid://ut5glvcqx7xj" path="res://Scenes/storeScene/BuyItems/Plant5.tscn" id="10_nqtt6"]
 
 [node name="main" type="Node2D"]
 

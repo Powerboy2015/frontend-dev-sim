@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://7giovy5kdh3h"]
+[gd_scene load_steps=6 format=3 uid="uid://7e10tpgviffa"]
 
-[ext_resource type="Script" uid="uid://dumbiwgeq6o43" path="res://Scenes/BuyItems/BuyItems.cs" id="1_7221t"]
-[ext_resource type="Texture2D" uid="uid://cfmhq0b7sn2en" path="res://Sprites/image 27.png" id="2_e0cog"]
-[ext_resource type="Texture2D" uid="uid://bspalxsqd3c5m" path="res://Sprites/close.png" id="3_g8j8o"]
-[ext_resource type="Texture2D" uid="uid://hde2wq0fo3rg" path="res://Sprites/basket.png" id="4_a7cku"]
+[ext_resource type="Script" uid="uid://dumbiwgeq6o43" path="res://Scenes/storeScene/BuyItems/BuyItems.cs" id="1_dtsjc"]
+[ext_resource type="Texture2D" uid="uid://dochqcxfoqifb" path="res://Sprites/image 28.png" id="2_xpkds"]
+[ext_resource type="Texture2D" uid="uid://bspalxsqd3c5m" path="res://Sprites/close.png" id="3_mkql0"]
+[ext_resource type="Texture2D" uid="uid://hde2wq0fo3rg" path="res://Sprites/basket.png" id="4_6m172"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fn33s"]
 bg_color = Color(0.18431373, 0.18431373, 0.18431373, 0.7176471)
 
-[node name="Plant3" type="Control"]
+[node name="Plant4" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +19,7 @@ offset_right = 17.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7221t")
+script = ExtResource("1_dtsjc")
 
 [node name="Item" type="Button" parent="."]
 layout_mode = 0
@@ -31,7 +31,7 @@ offset_bottom = 31.0
 [node name="Sprite2D" type="Sprite2D" parent="Item"]
 position = Vector2(37.176826, 38.151386)
 scale = Vector2(1.1205792, 0.90442604)
-texture = ExtResource("2_e0cog")
+texture = ExtResource("2_xpkds")
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
@@ -66,12 +66,12 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Close"]
 position = Vector2(18.999977, 18)
 scale = Vector2(0.06597221, 0.06035225)
-texture = ExtResource("3_g8j8o")
+texture = ExtResource("3_mkql0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
 position = Vector2(169.99997, 194.99998)
 scale = Vector2(2.9892046, 3.387758)
-texture = ExtResource("2_e0cog")
+texture = ExtResource("2_xpkds")
 
 [node name="BuyButton" type="Button" parent="Panel"]
 layout_mode = 0
@@ -83,7 +83,7 @@ offset_bottom = 337.0
 [node name="Sprite2D" type="Sprite2D" parent="Panel/BuyButton"]
 position = Vector2(16.000017, 14.999996)
 scale = Vector2(0.048469387, 0.063508086)
-texture = ExtResource("4_a7cku")
+texture = ExtResource("4_6m172")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
