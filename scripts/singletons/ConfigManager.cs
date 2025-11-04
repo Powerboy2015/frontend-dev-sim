@@ -81,10 +81,10 @@ public partial class ConfigManager : Node
 		window.Mode = fullscreen ? Window.ModeEnum.Fullscreen : Window.ModeEnum.Windowed;
 
 		// Sound settings
-		float master = (float)CF.GetValue("Sound", "Master", 1.0f);
-		float music = (float)CF.GetValue("Sound", "Music", 1.0f);
-		float sfx = (float)CF.GetValue("Sound", "SFX", 1.0f);
-		
+		float master = (float)CF.GetValue("Sound", "Master", 0.0f);
+		float music = (float)CF.GetValue("Sound", "Music", 0.0f);
+		float sfx = (float)CF.GetValue("Sound", "SFX", 0.0f);
+
 		AudioServer.SetBusVolumeDb(0, master);
 		AudioServer.SetBusVolumeDb(1, music);
 		AudioServer.SetBusVolumeDb(2, sfx);
