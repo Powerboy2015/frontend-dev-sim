@@ -1,0 +1,253 @@
+[gd_scene load_steps=3 format=3 uid="uid://m1fs8h84fps2"]
+
+[ext_resource type="Script" uid="uid://ioad5vm006yg" path="res://Scenes/menuScene/howToPlayScene/HowToPlayScene.cs" id="1_3tuhk"]
+[ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_4p4c5"]
+
+[node name="HowToPlayScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_3tuhk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.76862746, 1, 0.972549, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 96
+text = "How to play"
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+color = Color(0, 0, 0, 0)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="About" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/About"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 36
+text = "Gameplay"
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/About"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 32
+text = "It's your task as Frontend Developer to singlehandedly complete quests 
+for the people you choose. When completed, you will receive money, 
+which you can spend on several upgrades, including a new computer,
+maybe even employees. Also, don't forget to sleep ;)
+"
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 36
+text = "Controls"
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 32
+text = "These are the current controls for the game:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Movement" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer"]
+layout_mode = 2
+
+[node name="MoveUp" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement/MoveUp"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 32
+text = "Up:"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement/MoveUp"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 24
+text = "W"
+
+[node name="MoveLeft" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement/MoveLeft"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 32
+text = "Left:"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement/MoveLeft"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 24
+text = "A"
+
+[node name="MoveDown" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement/MoveDown"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 32
+text = "Down:"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement/MoveDown"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 24
+text = "S"
+
+[node name="MoveRight" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement/MoveRight"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 32
+text = "Right:"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Movement/MoveRight"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 24
+text = "D"
+
+[node name="Other" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer"]
+layout_mode = 2
+
+[node name="Interact" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Other"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Other/Interact"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 32
+text = "Interact:"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Other/Interact"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 24
+text = "E"
+
+[node name="Menu" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Other"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Other/Menu"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.796243, 0.796243, 0.796243, 1)
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 32
+text = "Menu:"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer/MarginContainer/VBoxContainer/Controls/HBoxContainer/Other/Menu"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 24
+text = "Escape"
+
+[node name="BackButton" type="Button" parent="MarginContainer"]
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 10
+theme_override_fonts/font = ExtResource("2_4p4c5")
+theme_override_font_sizes/font_size = 36
+text = "Back"
