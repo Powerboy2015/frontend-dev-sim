@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfklnnedcx1w3"]
 
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_vi0ng"]
-[ext_resource type="Script" uid="uid://r5jnftw6yt6i" path="res://Scenes/menuScene/settingsScene/SettingsScene.cs" id="1_yfv3e"]
-[ext_resource type="Script" uid="uid://b05tuurhuumdw" path="res://Scenes/menuScene/settingsScene/KeyBindButton.cs" id="3_mk0q3"]
+[ext_resource type="Script" uid="uid://r5jnftw6yt6i" path="res://scenes/menuScene/settingsScene/SettingsScene.cs" id="1_yfv3e"]
+[ext_resource type="Script" uid="uid://b05tuurhuumdw" path="res://scenes/menuScene/settingsScene/KeyBindButton.cs" id="3_mk0q3"]
 
 [node name="SettingsScene" type="Control"]
 layout_mode = 3
