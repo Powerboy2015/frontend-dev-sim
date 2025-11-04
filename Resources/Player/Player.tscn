@@ -1,15 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ber2pgjda3gn7"]
+[gd_scene load_steps=3 format=3 uid="uid://ber2pgjda3gn7"]
 
 [ext_resource type="Texture2D" uid="uid://c2dj04pvt4hk8" path="res://assets/sprites/playerCharacter.png" id="1_oil66"]
+[ext_resource type="Script" uid="uid://bbvu8j4thkw2q" path="res://scripts/player/PlayerMovement.cs" id="2_h6ei6"]
 
-[node name="Sprite2D" type="Sprite2D"]
-texture_filter = 3
+[node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.75, 0.75)
+collision_layer = 33
+script = ExtResource("2_h6ei6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -16)
 texture = ExtResource("1_oil66")
 
-[node name="Area2D" type="Area2D" parent="."]
-show_behind_parent = true
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-show_behind_parent = true
-polygon = PackedVector2Array(4, -14.666667, -8, -14.666667, -8, -2.6666667, -8, -1.3333334, -8, 16, 8, 16, 8, 0.39999962, 8, -2.6666667, 8, -10.666667)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -15)
+scale = Vector2(1, 1.5)
+polygon = PackedVector2Array(-7, -9.333334, -6, -10, 5, -10, 8, -8, 8, -6.666668, 7, -4, 3, -1.333334, 7, 1.333333, 7, 4, 5, 5.333333, 7, 10, -5, 10, -5, 5.333333, -8, 3.333333, -8, 0.66666603, -4, -0.666667, -4, -2, -7, -4)
