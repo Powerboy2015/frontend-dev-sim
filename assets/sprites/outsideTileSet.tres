@@ -71,6 +71,14 @@ texture = ExtResource("2_b0iln")
 0:5/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_btr5i")
 13:5/0 = 0
 13:5/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_7mdc5")
+8:6/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+9:6/0 = 0
+9:3/0 = 0
+8:3/0 = 0
+8:2/0 = 0
+9:2/0 = 0
 
 [resource]
 occlusion_layer_0/light_mask = 2
