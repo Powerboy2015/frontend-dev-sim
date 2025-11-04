@@ -1,56 +1,50 @@
-[gd_scene load_steps=6 format=3 uid="uid://7e10tpgviffa"]
+[gd_scene load_steps=6 format=3 uid="uid://d27g11eojmfrk"]
 
-[ext_resource type="Script" uid="uid://7yqktvvo2o8n" path="res://Scenes/BuyItems/Plant4/Plant4.cs" id="1_xpkds"]
-[ext_resource type="Texture2D" uid="uid://dochqcxfoqifb" path="res://Sprites/image 28.png" id="2_xpkds"]
-[ext_resource type="Texture2D" uid="uid://bspalxsqd3c5m" path="res://Sprites/close.png" id="3_mkql0"]
-[ext_resource type="Texture2D" uid="uid://hde2wq0fo3rg" path="res://Sprites/basket.png" id="4_6m172"]
+[ext_resource type="Script" uid="uid://dumbiwgeq6o43" path="res://Scenes/BuyItems/BuyItems.cs" id="1_uptue"]
+[ext_resource type="Texture2D" uid="uid://bspalxsqd3c5m" path="res://Sprites/close.png" id="2_6lah5"]
+[ext_resource type="Texture2D" uid="uid://dwhwg3xp0g4wx" path="res://Sprites/computer.png" id="2_e7rdd"]
+[ext_resource type="Texture2D" uid="uid://hde2wq0fo3rg" path="res://Sprites/basket.png" id="3_fgaav"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fn33s"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ex6p"]
 bg_color = Color(0.18431373, 0.18431373, 0.18431373, 0.7176471)
 
-[node name="Plant4" type="Control"]
+[node name="Buy Computer" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 17.0
-offset_top = -5.0
-offset_right = 17.0
-offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xpkds")
+script = ExtResource("1_uptue")
 
 [node name="Item" type="Button" parent="."]
 layout_mode = 0
-offset_left = -42.0
-offset_top = -28.0
-offset_right = 20.0
-offset_bottom = 31.0
+offset_left = -32.0
+offset_top = -29.0
+offset_right = 30.0
+offset_bottom = 30.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Item"]
-position = Vector2(37.176826, 38.151386)
-scale = Vector2(1.1205792, 0.90442604)
-texture = ExtResource("2_xpkds")
+position = Vector2(35, 29)
+scale = Vector2(0.13260338, 0.18409863)
+texture = ExtResource("2_e7rdd")
 
 [node name="Panel" type="Panel" parent="."]
 visible = false
 top_level = true
-z_index = 10
-custom_minimum_size = Vector2(0, 10)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -144.0
+offset_left = -146.0
 offset_top = -196.0
-offset_right = 182.0
+offset_right = 180.0
 offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_fn33s")
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ex6p")
 
 [node name="Close" type="Button" parent="Panel"]
 layout_mode = 1
@@ -58,20 +52,19 @@ anchors_preset = -1
 anchor_right = 0.001
 anchor_bottom = 0.002
 offset_left = 282.0
-offset_top = 4.0
-offset_right = 320.674
-offset_bottom = 38.254
-metadata/_edit_group_ = true
+offset_top = 8.0
+offset_right = 319.656
+offset_bottom = 42.072002
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/Close"]
-position = Vector2(18.999977, 18)
+position = Vector2(18.999975, 17.562508)
 scale = Vector2(0.06597221, 0.06035225)
-texture = ExtResource("3_mkql0")
+texture = ExtResource("2_6lah5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
-position = Vector2(169.99997, 194.99998)
-scale = Vector2(2.9892046, 3.387758)
-texture = ExtResource("2_xpkds")
+position = Vector2(155.75, 161)
+scale = Vector2(0.63625306, 0.6904762)
+texture = ExtResource("2_e7rdd")
 
 [node name="BuyButton" type="Button" parent="Panel"]
 layout_mode = 0
@@ -83,7 +76,7 @@ offset_bottom = 337.0
 [node name="Sprite2D" type="Sprite2D" parent="Panel/BuyButton"]
 position = Vector2(16.000017, 14.999996)
 scale = Vector2(0.048469387, 0.063508086)
-texture = ExtResource("4_6m172")
+texture = ExtResource("3_fgaav")
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -92,7 +85,17 @@ offset_top = 297.0
 offset_right = 232.75
 offset_bottom = 339.0
 theme_override_font_sizes/font_size = 30
-text = "Buy: 100 coins"
+text = "Buy: 300 coins"
+
+[node name="Price" type="Label" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 26.0
+offset_top = 24.0
+offset_right = 74.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 24
+text = "300"
 
 [connection signal="pressed" from="Item" to="Item" method="set_visible" binds= [false]]
 [connection signal="pressed" from="Item" to="Panel" method="set_visible" binds= [true]]
