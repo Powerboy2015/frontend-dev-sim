@@ -16,8 +16,8 @@ visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -192.0
-offset_bottom = 167.0
+offset_left = -111.0
+offset_bottom = 90.0
 grow_horizontal = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -26,10 +26,21 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.07450981, 0.07450981, 0.07450981, 0.31764707)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="MoneyLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="MoneyLabel" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("2_c2x1a")
@@ -38,7 +49,6 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
 texture = ExtResource("2_mdu8u")
