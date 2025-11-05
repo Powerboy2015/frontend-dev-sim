@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://iofljol036va"]
+[gd_scene load_steps=5 format=3 uid="uid://iofljol036va"]
 
+[ext_resource type="Script" uid="uid://7gx8gw55c72s" path="res://Singletons/SceneTransitionManager.cs" id="1_c4m8r"]
 [ext_resource type="Texture2D" uid="uid://bnsrp6pad77sy" path="res://assets/sprites/Tree.png" id="1_l70v6"]
+[ext_resource type="Script" uid="uid://cbp2ir8i24pie" path="res://scripts/teleport/TeleportPoint2D.cs" id="2_cp5gj"]
+[ext_resource type="PackedScene" uid="uid://e4p5fy0umqa1" path="res://Scenes/storeScene/Shop.tscn" id="4_sbpld"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_c4m8r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -14,9 +18,15 @@ texture_filter = 1
 position = Vector2(124, 616)
 texture = ExtResource("1_l70v6")
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
+[node name="Sprite2D3" type="Sprite2D" parent="." groups=["Player"]]
 texture_filter = 1
 position = Vector2(218, 614)
 texture = ExtResource("1_l70v6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TP_entrance_store" type="Node2D" parent="."]
+position = Vector2(174, 217)
+script = ExtResource("2_cp5gj")
+DestinationScene = ExtResource("4_sbpld")
+metadata/_custom_type_script = "uid://cbp2ir8i24pie"

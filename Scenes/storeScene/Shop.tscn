@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://e4p5fy0umqa1"]
+[gd_scene load_steps=8 format=3 uid="uid://e4p5fy0umqa1"]
 
+[ext_resource type="Script" uid="uid://7gx8gw55c72s" path="res://Singletons/SceneTransitionManager.cs" id="1_dlomg"]
 [ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://Scenes/playerScene/player.tscn" id="1_f511j"]
 [ext_resource type="PackedScene" uid="uid://cwha2u1yiirwn" path="res://Scenes/storeScene/shop_view.tscn" id="2_c0ofq"]
 [ext_resource type="PackedScene" uid="uid://d27g11eojmfrk" path="res://Scenes/storeScene/Buy_computer.tscn" id="3_svtxo"]
 [ext_resource type="PackedScene" uid="uid://dd87aqp8qyeeh" path="res://Scenes/HUD/HUD.tscn" id="5_dlomg"]
+[ext_resource type="Script" uid="uid://cbp2ir8i24pie" path="res://scripts/teleport/TeleportPoint2D.cs" id="6_o7a2t"]
+[ext_resource type="PackedScene" uid="uid://iofljol036va" path="res://Scenes/gameScene/gameScene.tscn" id="7_m8r1y"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_dlomg")
 
 [node name="Player" parent="." instance=ExtResource("1_f511j")]
 z_index = 1
@@ -17,3 +21,8 @@ Speed = 600.0
 [node name="Buy computer" parent="." instance=ExtResource("3_svtxo")]
 
 [node name="HUD" parent="." instance=ExtResource("5_dlomg")]
+
+[node name="TP_Store_enterance" type="Node2D" parent="."]
+script = ExtResource("6_o7a2t")
+DestinationScene = ExtResource("7_m8r1y")
+metadata/_custom_type_script = "uid://cbp2ir8i24pie"
