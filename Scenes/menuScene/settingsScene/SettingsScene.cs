@@ -98,7 +98,7 @@ public partial class SettingsScene : Control
 		};
 		
 		// Back button
-		GetNode<Button>("MarginContainer/BackButton").Pressed += () =>
+		GetNode<Button>("BackButton").Pressed += () =>
 		{
 			AudioHandler.Instance.PlaySFX(SFXType.Click);
 			GetTree().ChangeSceneToFile("res://scenes/menuScene/menuScene.tscn");

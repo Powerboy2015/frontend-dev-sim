@@ -1,21 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd87aqp8qyeeh"]
+[gd_scene load_steps=5 format=3 uid="uid://dd87aqp8qyeeh"]
 
-[ext_resource type="Script" uid="uid://d0fhdau8k1x1b" path="res://Scenes/HUD/HUD.cs" id="1_jg6e1"]
+[ext_resource type="Script" uid="uid://d0fhdau8k1x1b" path="res://scenes/HUD/HUD.cs" id="1_jg6e1"]
+[ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_c2x1a"]
 [ext_resource type="Texture2D" uid="uid://q4r02flr5puj" path="res://Sprites/wallet.png" id="2_mdu8u"]
+[ext_resource type="PackedScene" uid="uid://ddtty48o73ngl" path="res://scenes/HUD/pauseMenu/pauseMenu.tscn" id="3_43lqu"]
 
 [node name="HUD" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_jg6e1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1045.0001, 25)
-scale = Vector2(0.2986112, 0.3554422)
-texture = ExtResource("2_mdu8u")
+[node name="PauseMenu" parent="." instance=ExtResource("3_43lqu")]
+visible = false
 
-[node name="MoneyLabel" type="Label" parent="."]
-offset_left = 1071.0
-offset_top = 8.0
-offset_right = 1125.0
-offset_bottom = 95.0
-theme_override_font_sizes/font_size = 30
-text = "0
-"
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_bottom = 90.0
+grow_horizontal = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.07450981, 0.07450981, 0.07450981, 0.31764707)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MoneyLabel" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("2_c2x1a")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_mdu8u")
