@@ -21,6 +21,4 @@ texture_filter = 1
 position = Vector2(218, 614)
 texture = ExtResource("1_ehhdl")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ClientScreen" parent="CanvasLayer" instance=ExtResource("2_cp5gj")]
+[node name="HUD" parent="." instance=ExtResource("2_wggmt")]
