@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqigkowxlpv1i"]
 
-[ext_resource type="Script" uid="uid://cbo5lgdbcx48x" path="res://Scenes/menuScene/MenuScene.cs" id="1_2q8gc"]
+[ext_resource type="Script" uid="uid://cbo5lgdbcx48x" path="res://scenes/menuScene/MenuScene.cs" id="1_2q8gc"]
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_f05m2"]
 
 [node name="MenuScene" type="Control"]

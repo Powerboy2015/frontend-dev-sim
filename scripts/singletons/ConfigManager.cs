@@ -63,6 +63,14 @@ public partial class ConfigManager : Node
 		if (!CF.HasSectionKey("Controls", "Menu"))
 			CF.SetValue("Controls", "Menu", (int)Key.Escape);
 			
+		// Control settings
+		ApplyControlToInputMap("move_up", "MoveUp");
+		ApplyControlToInputMap("move_down", "MoveDown");
+		ApplyControlToInputMap("move_left", "MoveLeft");
+		ApplyControlToInputMap("move_right", "MoveRight");
+		ApplyControlToInputMap("interact", "Interact");
+		ApplyControlToInputMap("menu", "Menu");
+			
 		CF.Save("user://" + CFName);
 		GD.Print("Settings saved to " + ProjectSettings.GlobalizePath("user://" + CFName));
 	}

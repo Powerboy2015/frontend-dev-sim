@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddtty48o73ngl"]
+
+[ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_5bmhn"]
+[ext_resource type="Script" uid="uid://md3p6hatnptw" path="res://scenes/HUD/pauseMenu/PauseMenu.cs" id="1_44o57"]
+[ext_resource type="Shader" uid="uid://ddmtbpux17830" path="res://scenes/HUD/pauseMenu/pauseMenu.gdshader" id="2_evxya"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e2knj"]
+shader = ExtResource("2_evxya")
+shader_parameter/lod = 2.000000095
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_44o57")
+
+[node name="Black" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.12941177, 0.12941177, 0.12941177, 0.6784314)
+
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_e2knj")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.81960785)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 200
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+color = Color(0.36847907, 0.36847892, 0.36847892, 0.8352941)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Continue" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_5bmhn")
+theme_override_font_sizes/font_size = 36
+text = "Continue"
+
+[node name="Save" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_5bmhn")
+theme_override_font_sizes/font_size = 36
+text = "Save"
+
+[node name="Menu" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_5bmhn")
+theme_override_font_sizes/font_size = 36
+text = "Menu"
