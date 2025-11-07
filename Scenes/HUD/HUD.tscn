@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dd87aqp8qyeeh"]
 
-[ext_resource type="Script" uid="uid://d0fhdau8k1x1b" path="res://scenes/HUD/HUD.cs" id="1_jg6e1"]
+[ext_resource type="Script" uid="uid://d0fhdau8k1x1b" path="res://Scenes/HUD/HUD.cs" id="1_jg6e1"]
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_c2x1a"]
 [ext_resource type="Texture2D" uid="uid://q4r02flr5puj" path="res://Sprites/wallet.png" id="2_mdu8u"]
-[ext_resource type="PackedScene" uid="uid://ddtty48o73ngl" path="res://scenes/HUD/pauseMenu/pauseMenu.tscn" id="3_43lqu"]
+[ext_resource type="PackedScene" uid="uid://ddtty48o73ngl" path="res://Scenes/HUD/pauseMenu/pauseMenu.tscn" id="3_43lqu"]
 
 [node name="HUD" type="CanvasLayer"]
 process_mode = 3

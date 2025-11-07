@@ -1,13 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://iofljol036va"]
+[gd_scene load_steps=18 format=3 uid="uid://iofljol036va"]
 
-[ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://scenes/playerScene/player.tscn" id="1_2drtv"]
+[ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://Scenes/playerScene/player.tscn" id="1_2drtv"]
 [ext_resource type="Texture2D" uid="uid://c2wimft18mnof" path="res://Sprites/background.png" id="2_pft12"]
 [ext_resource type="Texture2D" uid="uid://domtrd0kexgeo" path="res://Sprites/floor2.png" id="3_3nsvd"]
-[ext_resource type="PackedScene" uid="uid://dd87aqp8qyeeh" path="res://scenes/HUD/HUD.tscn" id="3_24ac1"]
+[ext_resource type="PackedScene" uid="uid://dd87aqp8qyeeh" path="res://Scenes/HUD/HUD.tscn" id="3_24ac1"]
 [ext_resource type="Texture2D" uid="uid://bv7ym5yrc8y5f" path="res://Sprites/image 41.png" id="4_truun"]
-[ext_resource type="Script" uid="uid://da3j4cakxdtnl" path="res://scenes/roomScene/Area2d.cs" id="5_cqj7t"]
+[ext_resource type="Script" uid="uid://da3j4cakxdtnl" path="res://Scenes/roomScene/Area2d.cs" id="5_cqj7t"]
 [ext_resource type="Texture2D" uid="uid://c2r7nhxbabf7j" path="res://Sprites/player_desk.png" id="5_vlrlr"]
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="8_pft12"]
+[ext_resource type="PackedScene" uid="uid://c4qii8p35ld4u" path="res://Scenes/ClientScene/ClientScreen.tscn" id="9_7xx06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xmba"]
 size = Vector2(1147.4375, 337.21875)
@@ -37,7 +38,7 @@ size = Vector2(692.0904, 298.983)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqj7t"]
 size = Vector2(3241.7979, 1448.4629)
 
-[node name="Node2D" type="Node2D"]
+[node name="RoomScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2drtv")]
 z_index = 1
@@ -127,9 +128,12 @@ position = Vector2(279.00006, 106)
 scale = Vector2(0.39591837, 0.39591837)
 texture = ExtResource("5_vlrlr")
 
+[node name="HUD" parent="." instance=ExtResource("3_24ac1")]
+
 [node name="Computer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="Computer"]
+visible = false
 offset_left = 586.0
 offset_top = 183.0
 offset_right = 735.0
@@ -138,4 +142,6 @@ theme_override_fonts/font = ExtResource("8_pft12")
 theme_override_font_sizes/font_size = 24
 text = "Open Computer"
 
-[node name="HUD" parent="." instance=ExtResource("3_24ac1")]
+[node name="ClientScene" type="CanvasLayer" parent="."]
+
+[node name="ClientScreen" parent="ClientScene" instance=ExtResource("9_7xx06")]
