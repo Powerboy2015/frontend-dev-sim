@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 ConfigManager="*res://scripts/singletons/ConfigManager.cs"
 ClientSettings="*res://scripts/singletons/ClientSettings.cs"
 AudioHandler="*res://scripts/singletons/AudioHandler.cs"
-Wallet="*res://scenes/wallet/Wallet.cs"
+Wallet="*res://Scenes/wallet/Wallet.cs"
 
 [display]
 
