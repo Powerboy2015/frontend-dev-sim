@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://iofljol036va"]
+[gd_scene load_steps=28 format=3 uid="uid://iofljol036va"]
 
 [ext_resource type="Texture2D" uid="uid://c2wimft18mnof" path="res://Sprites/background.png" id="2_pft12"]
 [ext_resource type="Texture2D" uid="uid://domtrd0kexgeo" path="res://Sprites/floor2.png" id="3_3nsvd"]
@@ -6,11 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://bv7ym5yrc8y5f" path="res://Sprites/image 41.png" id="4_truun"]
 [ext_resource type="Script" uid="uid://da3j4cakxdtnl" path="res://Scenes/roomScene/Area2d.cs" id="5_cqj7t"]
 [ext_resource type="Texture2D" uid="uid://c2r7nhxbabf7j" path="res://Sprites/player_desk.png" id="5_vlrlr"]
+[ext_resource type="Texture2D" uid="uid://d1xqletfvcjee" path="res://Sprites/image 18.png" id="6_3mwjx"]
+[ext_resource type="Script" uid="uid://cs8ccxth6kbk1" path="res://scripts/upgrades/RoomUpgradeLoader.cs" id="6_kcoto"]
+[ext_resource type="Texture2D" uid="uid://b5vhflh6lot0c" path="res://Sprites/image 20.png" id="7_5hkn7"]
+[ext_resource type="Texture2D" uid="uid://cfmhq0b7sn2en" path="res://Sprites/image 27.png" id="8_kcoto"]
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="8_pft12"]
 [ext_resource type="PackedScene" uid="uid://c4qii8p35ld4u" path="res://Scenes/ClientScene/ClientScreen.tscn" id="9_7xx06"]
+[ext_resource type="Texture2D" uid="uid://dochqcxfoqifb" path="res://Sprites/image 28.png" id="9_q55r1"]
 [ext_resource type="Script" uid="uid://c28tfwlqew4u7" path="res://scripts/teleport/TeleportPoint2D.cs" id="10_omw6d"]
 [ext_resource type="PackedScene" uid="uid://ber2pgjda3gn7" path="res://Resources/Player/Player.tscn" id="10_pe0ax"]
+[ext_resource type="Texture2D" uid="uid://pcxmlrcq4om8" path="res://Sprites/image 29.png" id="10_qnjka"]
 [ext_resource type="Texture2D" uid="uid://c58hd5p1t448e" path="res://assets/sprites/Doormat.png" id="10_swsf1"]
+[ext_resource type="Texture2D" uid="uid://dwhwg3xp0g4wx" path="res://Sprites/computer.png" id="11_5hkn7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xmba"]
 size = Vector2(1147.4375, 337.21875)
@@ -128,12 +135,51 @@ position = Vector2(279.00006, 106)
 scale = Vector2(0.39591837, 0.39591837)
 texture = ExtResource("5_vlrlr")
 
+[node name="Room_upgrades" type="Node2D" parent="RoomView"]
+script = ExtResource("6_kcoto")
+
+[node name="Flower_1" type="Sprite2D" parent="RoomView/Room_upgrades"]
+visible = false
+texture_filter = 1
+position = Vector2(166, 226)
+texture = ExtResource("6_3mwjx")
+
+[node name="Flower_2" type="Sprite2D" parent="RoomView/Room_upgrades"]
+visible = false
+texture_filter = 1
+position = Vector2(234, 220)
+texture = ExtResource("7_5hkn7")
+
+[node name="Flower_3" type="Sprite2D" parent="RoomView/Room_upgrades"]
+visible = false
+texture_filter = 1
+position = Vector2(924, 227)
+texture = ExtResource("8_kcoto")
+
+[node name="Flower_4" type="Sprite2D" parent="RoomView/Room_upgrades"]
+visible = false
+texture_filter = 1
+position = Vector2(968, 228)
+texture = ExtResource("9_q55r1")
+
+[node name="Flower_5" type="Sprite2D" parent="RoomView/Room_upgrades"]
+visible = false
+texture_filter = 1
+position = Vector2(630, 221)
+texture = ExtResource("10_qnjka")
+
+[node name="Computer_6" type="Sprite2D" parent="RoomView/Room_upgrades"]
+visible = false
+texture_filter = 1
+position = Vector2(538, 233.00002)
+scale = Vector2(0.2959184, 0.29591838)
+texture = ExtResource("11_5hkn7")
+
 [node name="HUD" parent="." instance=ExtResource("3_24ac1")]
 
 [node name="Computer" type="CanvasLayer" parent="."]
 
 [node name="Button" type="Button" parent="Computer"]
-visible = false
 offset_left = 586.0
 offset_top = 183.0
 offset_right = 735.0
@@ -168,5 +214,5 @@ scale = Vector2(5, 5)
 texture = ExtResource("10_swsf1")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("10_pe0ax")]
-position = Vector2(676.00006, 600.00006)
+position = Vector2(731.00006, 487)
 scale = Vector2(7, 7)

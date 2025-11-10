@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ber2pgjda3gn7"]
+[gd_scene load_steps=6 format=3 uid="uid://ber2pgjda3gn7"]
 
 [ext_resource type="Script" uid="uid://dsg8006i8juk4" path="res://scripts/player/Player.cs" id="1_h6ei6"]
 [ext_resource type="Texture2D" uid="uid://c2dj04pvt4hk8" path="res://assets/sprites/playerCharacter.png" id="1_oil66"]
 [ext_resource type="Texture2D" uid="uid://blr7cj1vgid3x" path="res://assets/sprites/Keyboard Extras.png" id="3_245xc"]
+[ext_resource type="Texture2D" uid="uid://d7ih7g8iy30c" path="res://Sprites/Hat.png" id="4_p4lqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_245xc"]
 size = Vector2(9.333334, 4.666667)
@@ -28,3 +29,9 @@ texture_filter = 1
 texture_repeat = 1
 position = Vector2(0, -50)
 texture = ExtResource("3_245xc")
+
+[node name="Hat" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.1920929e-07, -34.666668)
+scale = Vector2(0.0638138, 0.06381378)
+texture = ExtResource("4_p4lqb")
