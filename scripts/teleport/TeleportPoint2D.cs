@@ -51,7 +51,7 @@ public partial class TeleportPoint2D : Node2D
 			if (RequireButtonPress)
 			{
 				GD.Print($"Press [E] or [Space] to teleport to '{Displayname}'");
-				// TODO: Show UI prompt here
+				currentPlayer.DisplayIcon(true);
 			}
 			else
 			{
@@ -67,6 +67,7 @@ public partial class TeleportPoint2D : Node2D
 		GD.Print($"Body exited teleport point '{TeleportId}': {body.Name}");
 		if (body is ITeleportable)
 		{
+			currentPlayer.DisplayIcon(false);
 			currentPlayer = null;
 			// TODO: Hide UI prompt here
 		}

@@ -81,7 +81,7 @@ offset_bottom = 272.0
 [node name="TeleportPoint2D" type="Node2D" parent="."]
 position = Vector2(618, 497)
 script = ExtResource("10_4cwn2")
-TeleportId = "tp_store_in"
+TeleportId = "tp_store_ins"
 Displayname = "Tp inside store"
 DestinationTeleportId = "tp_store_ou"
 metadata/_custom_type_script = "uid://c28tfwlqew4u7"

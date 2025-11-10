@@ -9,6 +9,13 @@ public partial class Player : CharacterBody2D, ITeleportable
 
 	private Area2D currentTeleportArea = null;
 
+	[Export]
+	public NodePath enterButtonIcon;
+
+	[Export]
+	public Sprite2D JerryIcon;
+	private Sprite2D enterButton;
+
 	public void TeleportTo(Vector2 destination)
 	{
 		GlobalPosition = destination;
@@ -19,7 +26,8 @@ public partial class Player : CharacterBody2D, ITeleportable
 	public override void _Ready()
 	{
 		AddToGroup("player");
-		collisionPolygon2D = GetNode<CharacterBody2D>("");
+		enterButton = GetNode<Sprite2D>(enterButtonIcon);
+		enterButton.Visible = false;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -34,6 +42,15 @@ public partial class Player : CharacterBody2D, ITeleportable
 		else
 		{
 			velocity = Vector2.Zero;
+		}
+
+		if (direction.X < 0)
+		{
+			JerryIcon.FlipH = true;
+		}
+		else if (direction.X > 0)
+		{
+			JerryIcon.FlipH = false;
 		}
 
 		Velocity = velocity;
@@ -61,6 +78,12 @@ public partial class Player : CharacterBody2D, ITeleportable
 		{
 			currentTeleportArea = null;
 		}
+	}
+
+
+	public void DisplayIcon(bool _display)
+	{
+		enterButton.Visible = _display;
 	}
 
 }

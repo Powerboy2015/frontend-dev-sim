@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cmdr2q1bpalm0"]
+[gd_scene load_steps=14 format=4 uid="uid://cmdr2q1bpalm0"]
 
 [ext_resource type="Texture2D" uid="uid://byqj6mi2n87jq" path="res://assets/sprites/WorldMap.png" id="1_0xto8"]
 [ext_resource type="TileSet" uid="uid://bfcbcssl1xfjp" path="res://assets/sprites/outsideTileSet.tres" id="1_gb6k6"]
@@ -18,11 +18,8 @@ distance = -13.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8l6j0"]
 size = Vector2(1923, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iotst"]
-size = Vector2(173, 138)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpcjf"]
-size = Vector2(173, 140)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_8l6j0"]
+points = PackedVector2Array(-43.777496, -70.5, 128.2225, -70.5, 129.2225, 80.5, 115.2225, 89.5, 51.222504, 89.5, 51.222504, 68.5, 40.222504, 56.5, 28.222504, 56.5, 19.222504, 70.5, 19.222504, 89.5, -44.777496, 89.5)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cpcjf"]
 polygon = PackedVector2Array(40, 53, -56, 53)
@@ -32,7 +29,7 @@ closed = false
 polygon = PackedVector2Array(56, -12, 48, -27, 39, 7, 40, 54, 56, 38)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cpcjf"]
-points = PackedVector2Array(-56, 6, -56, 34, 40, 33, 55, 19, 56, -10, 49, -27, -41, -27)
+points = PackedVector2Array(-56, 6, -56, 53, 40, 53, 56, 38, 56, -10, 49, -27, -41, -27)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cpcjf"]
 radius = 6.0
@@ -95,12 +92,12 @@ tile_set = ExtResource("1_gb6k6")
 [node name="StaticBody2D" type="StaticBody2D" parent="Building layer"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building layer/StaticBody2D"]
-position = Vector2(118.5, 69)
-shape = SubResource("RectangleShape2D_iotst")
+position = Vector2(76.7775, 70.5)
+shape = SubResource("ConvexPolygonShape2D_8l6j0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Building layer/StaticBody2D"]
-position = Vector2(454.5, 70)
-shape = SubResource("RectangleShape2D_cpcjf")
+position = Vector2(412, 71)
+shape = SubResource("ConvexPolygonShape2D_8l6j0")
 
 [node name="MainHouse" type="Sprite2D" parent="."]
 light_mask = 3
@@ -155,6 +152,7 @@ metadata/_custom_type_script = "uid://c28tfwlqew4u7"
 position = Vector2(-60, -22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportPoint2D/Area2D"]
+position = Vector2(0, 16)
 shape = SubResource("CircleShape2D_cpcjf")
 
 [node name="TeleportPoint2D" type="Node2D" parent="TeleportPoint2D"]
@@ -169,4 +167,5 @@ metadata/_custom_type_script = "uid://c28tfwlqew4u7"
 position = Vector2(46, -27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportPoint2D/TeleportPoint2D/Area2D"]
+position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_cpcjf")
