@@ -124,6 +124,7 @@ scale = Vector2(0.3612245, 0.3612245)
 shape = SubResource("RectangleShape2D_dtspk")
 
 [node name="Area2D" type="Area2D" parent="RoomView/desk"]
+process_mode = 3
 position = Vector2(276, 196)
 script = ExtResource("5_cqj7t")
 
@@ -205,9 +206,9 @@ theme_override_font_sizes/font_size = 24
 text = "Open Computer"
 
 [node name="ClientScene" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ClientScreen" parent="ClientScene" instance=ExtResource("9_7xx06")]
+visible = false
 
 [node name="TeleportPoint2D" type="Node2D" parent="."]
 position = Vector2(451, 510)

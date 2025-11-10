@@ -1,15 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4qii8p35ld4u"]
+[gd_scene load_steps=5 format=3 uid="uid://c4qii8p35ld4u"]
 
-[ext_resource type="Script" uid="uid://dc3e6iumhv6oi" path="res://Scenes/ClientScene/ClientScreen.cs" id="1_1pwuu"]
-[ext_resource type="Shader" uid="uid://ddmtbpux17830" path="res://assets/shaders/blur.gdshader" id="1_1471c"]
+[ext_resource type="Script" uid="uid://f3tk70ol50l6" path="res://Scenes/ClientScene/CloseClientWindow.cs" id="1_1471c"]
 [ext_resource type="Script" uid="uid://c5rra4ti70jl8" path="res://Scenes/ClientScene/AddClients.cs" id="1_kv485"]
 [ext_resource type="PackedScene" uid="uid://dv01iimy0w53g" path="res://Scenes/ClientScene/ClientBaseScene.tscn" id="2_1471c"]
 [ext_resource type="Resource" uid="uid://cb3vkpgoongut" path="res://Resources/Clients/lily.tres" id="3_1pwuu"]
-[ext_resource type="Resource" uid="uid://0bcrd235vbq1" path="res://Resources/Clients/thomas.tres" id="4_qman7"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1pwuu"]
-shader = ExtResource("1_1471c")
-shader_parameter/lod = 2.000000095
 
 [node name="ClientScreen" type="Control"]
 process_mode = 3
@@ -19,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1471c")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -58,6 +53,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Coins" type="HBoxContainer" parent="Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.054
@@ -88,10 +84,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kv485")
 clientBase = ExtResource("2_1471c")
-Clients = Array[Object]([ExtResource("3_1pwuu"), ExtResource("4_qman7")])
+Clients = Array[Object]([ExtResource("3_1pwuu")])
 
 [node name="Content" type="VBoxContainer" parent="Panel/ScrollContent"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+
+[connection signal="pressed" from="Panel/MenuBar/Button" to="." method="_on_pressed"]

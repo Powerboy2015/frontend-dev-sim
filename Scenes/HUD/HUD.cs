@@ -8,8 +8,8 @@ public partial class HUD : CanvasLayer
 	public override void _Ready()
 	{
 		MoneyLabel = GetNode<Label>("MarginContainer/MarginContainer/HBoxContainer/MoneyLabel");
-		Wallet.Instance.AddCoins(1000);
-		UpdateMoney();
+		// Wallet.Instance.AddCoins(1000);
+		// UpdateMoney();
 		Wallet.Instance.CoinsChanged += OnCoinsChanged;
 	}
 

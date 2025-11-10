@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd8wls15d2u7"]
+[gd_scene load_steps=2 format=3 uid="uid://bd8wls15d2u7"]
 
 [ext_resource type="Script" uid="uid://cvd8h4c47flk" path="res://Scenes/DevScene/DevScreen.cs" id="1_tqsk2"]
 
-
 [node name="DevScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tqsk2")
-
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

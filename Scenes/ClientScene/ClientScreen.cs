@@ -8,11 +8,11 @@ public partial class ClientScreen : Control
 	public override void _Ready()
 	{
 		_closeButton = GetNode<Button>("Panel/MenuBar/Button");
-		_closeButton.Pressed += OnClosePressed;
+		_closeButton.Pressed += OnCloseWindowPressed;
 		Visible = true;
 	}
 
-	private void OnClosePressed()
+	private void OnCloseWindowPressed()
 	{
 		AudioHandler.Instance.PlaySFX(SFXType.Click);
 		var layer = GetParent() as CanvasLayer;

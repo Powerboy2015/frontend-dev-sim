@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ClientBase" load_steps=3 format=3 uid="uid://0bcrd235vbq1"]
+[gd_resource type="Resource" script_class="ClientBase" load_steps=4 format=3 uid="uid://0bcrd235vbq1"]
 
-[ext_resource type="Texture2D" uid="uid://bnsrp6pad77sy" path="res://sprites/Tree.png" id="1_t68hl"]
+[ext_resource type="Texture2D" uid="uid://bnsrp6pad77sy" path="res://assets/sprites/Tree.png" id="1_t68hl"]
 [ext_resource type="Script" uid="uid://b7wxpjrhntokw" path="res://Resources/Resource_Classes/ClientBase.cs" id="1_yad0f"]
+[ext_resource type="Resource" uid="uid://b2do6xc11hwuc" path="res://Resources/Challenges/Lily/Challenge_2.tres" id="2_ixjm7"]
 
 [resource]
 script = ExtResource("1_yad0f")
 Name = "Thomas"
 Description = "Ik wil graag een website voor mijn epische bedrijf"
+CodingChallenges = Array[Object]([ExtResource("2_ixjm7")])
 ClientTexture = ExtResource("1_t68hl")
 metadata/_custom_type_script = "uid://b7wxpjrhntokw"

@@ -48,7 +48,7 @@ public partial class DevScreen : Control
 				Current_Step += 1;
 				preview.Text += "\n" + code_Parts[Current_Step];
 
-				Wallet.Instance.AddCoins(10);
+				Wallet.Instance.AddCoins(100);
 			}
 		}
 	}

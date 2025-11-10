@@ -9,6 +9,6 @@
 script = ExtResource("1_7ts5k")
 Name = "Lily"
 Description = "I need help making an HTML website for my hospital!"
-CodingChallenges = Array[Resource]([ExtResource("2_38scj"), ExtResource("3_l70cy")])
+CodingChallenges = Array[Resource]([ExtResource("3_l70cy"), ExtResource("2_38scj")])
 ClientTexture = ExtResource("1_xr4yi")
 metadata/_custom_type_script = "uid://b7wxpjrhntokw"
