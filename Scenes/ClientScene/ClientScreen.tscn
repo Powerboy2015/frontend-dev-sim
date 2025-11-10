@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4qii8p35ld4u"]
+[gd_scene load_steps=8 format=3 uid="uid://c4qii8p35ld4u"]
 
 [ext_resource type="Script" uid="uid://dc3e6iumhv6oi" path="res://Scenes/ClientScene/ClientScreen.cs" id="1_1pwuu"]
 [ext_resource type="Shader" uid="uid://ddmtbpux17830" path="res://assets/shaders/blur.gdshader" id="1_1471c"]
