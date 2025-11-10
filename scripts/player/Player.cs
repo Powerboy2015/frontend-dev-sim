@@ -28,6 +28,31 @@ public partial class Player : CharacterBody2D, ITeleportable
 		AddToGroup("player");
 		enterButton = GetNode<Sprite2D>(enterButtonIcon);
 		enterButton.Visible = false;
+
+		UpgradeManager.instance.GetEnabledUpgrades().ForEach(upgradeName =>
+		{
+			OnUpgradeEnabled(upgradeName);
+		});
+
+		UpgradeManager.instance.UpgradeEnabled += OnUpgradeEnabled; // Use UpgradeEnabled, not OnUpgradeEnabled
+	}
+
+	private void OnUpgradeEnabled(string upgradeName)
+	{
+		GD.Print($"Player detected upgrade enabled: {upgradeName}");
+		// Handle upgrade effects on player here
+		if (upgradeName == "Hat")
+		{
+			Sprite2D hatSprite = GetNodeOrNull<Sprite2D>(upgradeName);
+			if (hatSprite != null)
+			{
+				hatSprite.Visible = true;
+			}
+			else
+			{
+				GD.PrintErr("HatSprite node not found on Player!");
+			}
+		}
 	}
 
 	public override void _PhysicsProcess(double delta)

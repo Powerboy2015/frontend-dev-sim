@@ -18,9 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 ConfigManager="*res://scripts/singletons/ConfigManager.cs"
+ClientSettings="*res://scripts/singletons/ClientSettings.cs"
 AudioHandler="*res://scripts/singletons/AudioHandler.cs"
 Wallet="*res://Scenes/wallet/Wallet.cs"
 SceneTransitionManager="*res://Singletons/SceneTransitionManager.cs"
+UpgradeManager="*res://scripts/upgrades/UpgradeManager.cs"
 
 [display]
 
