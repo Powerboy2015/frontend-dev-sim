@@ -1,0 +1,164 @@
+[gd_scene load_steps=20 format=3 uid="uid://iofljol036va"]
+
+[ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://Scenes/playerScene/player.tscn" id="1_2drtv"]
+[ext_resource type="Texture2D" uid="uid://c2wimft18mnof" path="res://Sprites/background.png" id="2_pft12"]
+[ext_resource type="Texture2D" uid="uid://domtrd0kexgeo" path="res://Sprites/floor2.png" id="3_3nsvd"]
+[ext_resource type="PackedScene" uid="uid://dd87aqp8qyeeh" path="res://Scenes/HUD/HUD.tscn" id="3_24ac1"]
+[ext_resource type="Texture2D" uid="uid://bv7ym5yrc8y5f" path="res://Sprites/image 41.png" id="4_truun"]
+[ext_resource type="Script" uid="uid://da3j4cakxdtnl" path="res://Scenes/roomScene/Area2d.cs" id="5_cqj7t"]
+[ext_resource type="Texture2D" uid="uid://c2r7nhxbabf7j" path="res://Sprites/player_desk.png" id="5_vlrlr"]
+[ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="8_pft12"]
+[ext_resource type="PackedScene" uid="uid://c4qii8p35ld4u" path="res://Scenes/ClientScene/ClientScreen.tscn" id="9_7xx06"]
+[ext_resource type="Script" uid="uid://c28tfwlqew4u7" path="res://scripts/teleport/TeleportPoint2D.cs" id="10_omw6d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xmba"]
+size = Vector2(1147.4375, 337.21875)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_g2wc3"]
+b = Vector2(0, 648)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2mkjw"]
+a = Vector2(-56, 56)
+b = Vector2(136, 56)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3jkyh"]
+a = Vector2(328, 648)
+b = Vector2(1152, 648)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jjdno"]
+a = Vector2(3, -8)
+b = Vector2(-1, 149)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rfl27"]
+a = Vector2(201, 718)
+b = Vector2(328, 718)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtspk"]
+size = Vector2(692.0904, 298.983)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqj7t"]
+size = Vector2(3241.7979, 1448.4629)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe0ax"]
+radius = 60.299255
+
+[node name="RoomScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_2drtv")]
+z_index = 1
+position = Vector2(531.52, 482)
+
+[node name="RoomView" type="Node2D" parent="."]
+
+[node name="wall" type="StaticBody2D" parent="RoomView"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomView/wall"]
+position = Vector2(576, 170.60938)
+shape = SubResource("RectangleShape2D_0xmba")
+one_way_collision_margin = 128.0
+
+[node name="Background" type="Sprite2D" parent="RoomView/wall"]
+position = Vector2(576.49994, 166.25)
+scale = Vector2(2.055357, 0.50075305)
+texture = ExtResource("2_pft12")
+
+[node name="floor" type="Sprite2D" parent="RoomView"]
+
+[node name="Floor2" type="Sprite2D" parent="RoomView/floor"]
+position = Vector2(576, 470)
+scale = Vector2(1.0090909, 1)
+texture = ExtResource("3_3nsvd")
+
+[node name="Borders" type="StaticBody2D" parent="RoomView"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomView/Borders"]
+shape = SubResource("SegmentShape2D_g2wc3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RoomView/Borders"]
+position = Vector2(1152, 0)
+shape = SubResource("SegmentShape2D_g2wc3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="RoomView/Borders"]
+position = Vector2(64, 592)
+shape = SubResource("SegmentShape2D_2mkjw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RoomView/Borders"]
+shape = SubResource("SegmentShape2D_3jkyh")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="RoomView/Borders"]
+position = Vector2(199, 655)
+shape = SubResource("SegmentShape2D_jjdno")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="RoomView/Borders"]
+position = Vector2(326, 655)
+shape = SubResource("SegmentShape2D_jjdno")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="RoomView/Borders"]
+position = Vector2(-3, 85)
+shape = SubResource("SegmentShape2D_rfl27")
+
+[node name="windows" type="Sprite2D" parent="RoomView"]
+position = Vector2(-295, -18)
+
+[node name="Sprite2D2" type="Sprite2D" parent="RoomView/windows"]
+position = Vector2(465.00006, 182)
+scale = Vector2(0.9238095, 0.9727273)
+texture = ExtResource("4_truun")
+
+[node name="Sprite2D3" type="Sprite2D" parent="RoomView/windows"]
+position = Vector2(1278, 179)
+scale = Vector2(0.9238095, 0.9727273)
+texture = ExtResource("4_truun")
+
+[node name="desk" type="StaticBody2D" parent="RoomView"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomView/desk"]
+position = Vector2(555, 334)
+scale = Vector2(0.3612245, 0.3612245)
+shape = SubResource("RectangleShape2D_dtspk")
+
+[node name="Area2D" type="Area2D" parent="RoomView/desk"]
+position = Vector2(276, 196)
+script = ExtResource("5_cqj7t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RoomView/desk/Area2D"]
+position = Vector2(295.5, 102.5)
+scale = Vector2(0.13048315, 0.13048315)
+shape = SubResource("RectangleShape2D_cqj7t")
+
+[node name="PlayerDesk" type="Sprite2D" parent="RoomView/desk/Area2D"]
+position = Vector2(279.00006, 106)
+scale = Vector2(0.39591837, 0.39591837)
+texture = ExtResource("5_vlrlr")
+
+[node name="HUD" parent="." instance=ExtResource("3_24ac1")]
+
+[node name="Computer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="Computer"]
+visible = false
+offset_left = 586.0
+offset_top = 183.0
+offset_right = 735.0
+offset_bottom = 235.0
+theme_override_fonts/font = ExtResource("8_pft12")
+theme_override_font_sizes/font_size = 24
+text = "Open Computer"
+
+[node name="ClientScene" type="CanvasLayer" parent="."]
+
+[node name="ClientScreen" parent="ClientScene" instance=ExtResource("9_7xx06")]
+
+[node name="TeleportPoint2D" type="Node2D" parent="."]
+position = Vector2(451, 510)
+script = ExtResource("10_omw6d")
+TeleportId = "tp_house_in"
+Displayname = "tp inside house"
+DestinationTeleportId = "tp_house_out"
+metadata/_custom_type_script = "uid://c28tfwlqew4u7"
+
+[node name="Area2D" type="Area2D" parent="TeleportPoint2D"]
+position = Vector2(-186, 137)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportPoint2D/Area2D"]
+shape = SubResource("CircleShape2D_pe0ax")

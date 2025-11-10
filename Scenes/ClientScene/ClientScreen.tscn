@@ -6,7 +6,12 @@
 [ext_resource type="Resource" uid="uid://cb3vkpgoongut" path="res://Resources/Clients/lily.tres" id="3_1pwuu"]
 [ext_resource type="Resource" uid="uid://0bcrd235vbq1" path="res://Resources/Clients/thomas.tres" id="4_qman7"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1pwuu"]
+shader = ExtResource("1_1471c")
+shader_parameter/lod = 2.000000095
+
 [node name="ClientScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
