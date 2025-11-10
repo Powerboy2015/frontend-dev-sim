@@ -8,10 +8,11 @@ public partial class TeleportPoint2D : Node2D
 	[Export] public string TeleportId { get; set; } = "";
 	[Export] public string Displayname { get; set; } = "Teleport Point";
 	[Export] public Array<TeleportPoint2D> ConnectedPoints { get; set; } = new Array<TeleportPoint2D>();
-
-	[Export] public string DestinationTeleportId { get; set; } = ""; // Just use normal Export for now
+	[Export] public string DestinationTeleportId { get; set; } = "";
+	[Export] public bool RequireButtonPress { get; set; } = true; // New: toggle auto vs manual
 
 	private Area2D detectionArea;
+	private ITeleportable currentPlayer = null;
 
 	public override void _Ready()
 	{
@@ -19,10 +20,24 @@ public partial class TeleportPoint2D : Node2D
 		if (detectionArea != null)
 		{
 			detectionArea.BodyEntered += OnBodyEntered;
+			detectionArea.BodyExited += OnBodyExisted;
 		}
 		else
 		{
 			GD.PrintErr($"TeleportPoint2D '{Name}' missing Area2D child!");
+		}
+	}
+
+	public override void _Process(double delta)
+	{
+		// Check for button press when player is in area
+		if (RequireButtonPress && currentPlayer != null)
+		{
+			if (Input.IsActionJustPressed("ui_accept")) // Space/Enter
+			{
+				GD.Print($"Player pressed teleport button at '{TeleportId}'");
+				Teleport(currentPlayer);
+			}
 		}
 	}
 
@@ -31,8 +46,29 @@ public partial class TeleportPoint2D : Node2D
 		GD.Print($"Body entered teleport point '{TeleportId}': {body.Name}");
 		if (body is ITeleportable teleportable)
 		{
-			GD.Print($"Teleporting '{body.Name}' via teleport point '{TeleportId}'");
-			Teleport(teleportable);
+			currentPlayer = teleportable;
+
+			if (RequireButtonPress)
+			{
+				GD.Print($"Press [E] or [Space] to teleport to '{Displayname}'");
+				// TODO: Show UI prompt here
+			}
+			else
+			{
+				// Auto-teleport (original behavior)
+				GD.Print($"Teleporting '{body.Name}' via teleport point '{TeleportId}'");
+				Teleport(teleportable);
+			}
+		}
+	}
+
+	private void OnBodyExisted(Node body)
+	{
+		GD.Print($"Body exited teleport point '{TeleportId}': {body.Name}");
+		if (body is ITeleportable)
+		{
+			currentPlayer = null;
+			// TODO: Hide UI prompt here
 		}
 	}
 
