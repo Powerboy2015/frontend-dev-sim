@@ -29,19 +29,28 @@ public partial class Player : CharacterBody2D, ITeleportable
 		enterButton = GetNode<Sprite2D>(enterButtonIcon);
 		enterButton.Visible = false;
 
-		//statically checks which upgrades are enabled.
-		UpgradeManager.instance.GetEnabledUpgrades().ForEach(upgradeName =>
-		{
-			OnUpgradeEnabled(upgradeName);
-		});
 
 		//dynamically listens for upgrades being enabled.
-		UpgradeManager.instance.UpgradeEnabled += OnUpgradeEnabled; // Use UpgradeEnabled, not OnUpgradeEnabled
+		UpgradeManager.instance.UpgradeEnabled += OnUpgradeEnabled;
+
+		//statically checks which upgrades are enabled.
+		foreach (var upgradeName in UpgradeManager.instance.GetEnabledUpgrades())
+		{
+			OnUpgradeEnabled(upgradeName);
+		}
+	}
+
+	// Unsubscribe when player is freed
+	public override void _ExitTree()
+	{
+		if (UpgradeManager.instance != null)
+		{
+			UpgradeManager.instance.UpgradeEnabled -= OnUpgradeEnabled;
+		}
 	}
 
 	private void OnUpgradeEnabled(string upgradeName)
 	{
-
 		// Only one player upgrade, the hat.
 		GD.Print($"Player detected upgrade enabled: {upgradeName}");
 		// Handle upgrade effects on player here

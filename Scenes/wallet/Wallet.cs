@@ -6,6 +6,9 @@ public partial class Wallet : Node2D
 {
 	public static Wallet Instance { get; private set; }
 
+	[Signal]
+	public delegate void CoinsChangedEventHandler();
+
 	public int Coins { get; private set; }
 
 	public override void _Ready()
@@ -16,13 +19,16 @@ public partial class Wallet : Node2D
 	public void AddCoins(int amount)
 	{
 		Coins += amount;
+		EmitSignal(SignalName.CoinsChanged);
 	}
 
 	public void RemoveCoins(int amount)
 	{
+
 		if (Coins - amount >= 0)
 		{
 			Coins -= amount;
+			EmitSignal(SignalName.CoinsChanged);
 		}
 
 		else
