@@ -11,7 +11,7 @@ public partial class MenuScene : Control
 		GetNode<Button>("MarginContainer/VBoxContainer/VBoxContainer/StartButton").Pressed += () =>
 		{
 			AudioHandler.Instance.PlaySFX(SFXType.Click);
-			GetTree().ChangeSceneToFile("res://scenes/storeScene/Shop.tscn");
+			GetTree().ChangeSceneToFile("res://scenes/roomScene/roomScene.tscn");
 		};
 
 		GetNode<Button>("MarginContainer/VBoxContainer/VBoxContainer/SettingsButton").Pressed += () =>
