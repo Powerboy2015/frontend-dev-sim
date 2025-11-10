@@ -29,14 +29,24 @@ public partial class Player : CharacterBody2D, ITeleportable
 		enterButton = GetNode<Sprite2D>(enterButtonIcon);
 		enterButton.Visible = false;
 
+
+		//dynamically listens for upgrades being enabled.
+		UpgradeManager.instance.UpgradeEnabled += OnUpgradeEnabled; // Use UpgradeEnabled, not OnUpgradeEnabled
+
 		//statically checks which upgrades are enabled.
 		UpgradeManager.instance.GetEnabledUpgrades().ForEach(upgradeName =>
 		{
 			OnUpgradeEnabled(upgradeName);
 		});
+	}
 
-		//dynamically listens for upgrades being enabled.
-		UpgradeManager.instance.UpgradeEnabled += OnUpgradeEnabled; // Use UpgradeEnabled, not OnUpgradeEnabled
+	// Unsubscribe when player is freed
+	public override void _ExitTree()
+	{
+		if (UpgradeManager.instance != null)
+		{
+			UpgradeManager.instance.UpgradeEnabled -= OnUpgradeEnabled;
+		}
 	}
 
 	private void OnUpgradeEnabled(string upgradeName)

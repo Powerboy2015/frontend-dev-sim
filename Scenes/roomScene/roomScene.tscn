@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://iofljol036va"]
+[gd_scene load_steps=30 format=3 uid="uid://iofljol036va"]
 
 [ext_resource type="Texture2D" uid="uid://c2wimft18mnof" path="res://Sprites/background.png" id="2_pft12"]
 [ext_resource type="Texture2D" uid="uid://domtrd0kexgeo" path="res://Sprites/floor2.png" id="3_3nsvd"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://pcxmlrcq4om8" path="res://Sprites/image 29.png" id="10_qnjka"]
 [ext_resource type="Texture2D" uid="uid://c58hd5p1t448e" path="res://assets/sprites/Doormat.png" id="10_swsf1"]
 [ext_resource type="Texture2D" uid="uid://dwhwg3xp0g4wx" path="res://Sprites/computer.png" id="11_5hkn7"]
+[ext_resource type="Texture2D" uid="uid://b78j28bfhqgm1" path="res://assets/sprites/Closet.png" id="13_qnjka"]
+[ext_resource type="Texture2D" uid="uid://4xhumkf4rxh8" path="res://assets/sprites/Lamp_standing.png" id="14_soerc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xmba"]
 size = Vector2(1147.4375, 337.21875)
@@ -175,6 +177,20 @@ position = Vector2(538, 233.00002)
 scale = Vector2(0.2959184, 0.29591838)
 texture = ExtResource("11_5hkn7")
 
+[node name="Closet" type="Sprite2D" parent="RoomView/Room_upgrades"]
+visible = false
+texture_filter = 1
+position = Vector2(345, 275)
+scale = Vector2(6.472222, 6.4722214)
+texture = ExtResource("13_qnjka")
+
+[node name="Lamp" type="Sprite2D" parent="RoomView/Room_upgrades"]
+visible = false
+texture_filter = 1
+position = Vector2(732.99994, 294)
+scale = Vector2(4.9615397, 4.9615393)
+texture = ExtResource("14_soerc")
+
 [node name="HUD" parent="." instance=ExtResource("3_24ac1")]
 
 [node name="Computer" type="CanvasLayer" parent="."]
@@ -214,5 +230,5 @@ scale = Vector2(5, 5)
 texture = ExtResource("10_swsf1")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("10_pe0ax")]
-position = Vector2(731.00006, 487)
+position = Vector2(541, 586)
 scale = Vector2(7, 7)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://e4p5fy0umqa1"]
+[gd_scene load_steps=16 format=3 uid="uid://e4p5fy0umqa1"]
 
 [ext_resource type="PackedScene" uid="uid://cwha2u1yiirwn" path="res://Scenes/storeScene/shop_view.tscn" id="2_c0ofq"]
 [ext_resource type="PackedScene" uid="uid://d27g11eojmfrk" path="res://Scenes/storeScene/BuyItems/Buy_computer.tscn" id="3_svtxo"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://7giovy5kdh3h" path="res://Scenes/storeScene/BuyItems/Plant3.tscn" id="8_m8r1y"]
 [ext_resource type="PackedScene" uid="uid://7e10tpgviffa" path="res://Scenes/storeScene/BuyItems/Plant4.tscn" id="9_3ikb8"]
 [ext_resource type="Script" uid="uid://c28tfwlqew4u7" path="res://scripts/teleport/TeleportPoint2D.cs" id="10_4cwn2"]
+[ext_resource type="PackedScene" uid="uid://jmjfk7f7rfhr" path="res://Scenes/storeScene/BuyItems/Lamp.tscn" id="10_m32lr"]
 [ext_resource type="PackedScene" uid="uid://ut5glvcqx7xj" path="res://Scenes/storeScene/BuyItems/Plant5.tscn" id="10_nqtt6"]
+[ext_resource type="PackedScene" uid="uid://duxnhqthqxyoq" path="res://Scenes/storeScene/BuyItems/Closet.tscn" id="11_1nkbh"]
 [ext_resource type="PackedScene" uid="uid://ber2pgjda3gn7" path="res://Resources/Player/Player.tscn" id="11_smynp"]
 [ext_resource type="Texture2D" uid="uid://c58hd5p1t448e" path="res://assets/sprites/Doormat.png" id="12_smynp"]
 
@@ -78,6 +80,18 @@ offset_left = 116.0
 offset_top = 272.0
 offset_right = 116.0
 offset_bottom = 272.0
+
+[node name="Lamp" parent="." instance=ExtResource("10_m32lr")]
+offset_left = 304.0
+offset_top = 273.0
+offset_right = 304.0
+offset_bottom = 273.0
+
+[node name="Closet" parent="." instance=ExtResource("11_1nkbh")]
+offset_left = 368.0
+offset_top = 273.0
+offset_right = 368.0
+offset_bottom = 273.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
