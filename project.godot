@@ -21,6 +21,8 @@ ConfigManager="*res://scripts/singletons/ConfigManager.cs"
 ClientSettings="*res://scripts/singletons/ClientSettings.cs"
 AudioHandler="*res://scripts/singletons/AudioHandler.cs"
 Wallet="*res://Scenes/wallet/Wallet.cs"
+SceneTransitionManager="*res://Singletons/SceneTransitionManager.cs"
+UpgradeManager="*res://scripts/upgrades/UpgradeManager.cs"
 
 [display]
 
@@ -30,7 +32,7 @@ window/stretch/aspect="expand"
 
 [dotnet]
 
-project/assembly_name="Store LearnStory"
+project/assembly_name="frontend-dev-sim"
 
 [input]
 
@@ -45,6 +47,30 @@ AddCoins1={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_6="PlayerCollision"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+move_up={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+move_down={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+move_right={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+move_left={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}

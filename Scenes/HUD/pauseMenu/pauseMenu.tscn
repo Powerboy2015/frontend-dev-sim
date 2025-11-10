@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddtty48o73ngl"]
 
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_5bmhn"]
-[ext_resource type="Script" uid="uid://md3p6hatnptw" path="res://scenes/HUD/pauseMenu/PauseMenu.cs" id="1_44o57"]
-[ext_resource type="Shader" uid="uid://ddmtbpux17830" path="res://scenes/HUD/pauseMenu/pauseMenu.gdshader" id="2_evxya"]
+[ext_resource type="Script" uid="uid://md3p6hatnptw" path="res://Scenes/HUD/pauseMenu/PauseMenu.cs" id="1_44o57"]
+[ext_resource type="Shader" uid="uid://ddmtbpux17830" path="res://assets/shaders/blur.gdshader" id="2_evxya"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e2knj"]
 shader = ExtResource("2_evxya")

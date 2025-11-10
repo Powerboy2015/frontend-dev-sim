@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://e4p5fy0umqa1"]
+[gd_scene load_steps=16 format=3 uid="uid://e4p5fy0umqa1"]
 
-[ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://Scenes/playerScene/player.tscn" id="1_f511j"]
 [ext_resource type="PackedScene" uid="uid://cwha2u1yiirwn" path="res://Scenes/storeScene/shop_view.tscn" id="2_c0ofq"]
 [ext_resource type="PackedScene" uid="uid://d27g11eojmfrk" path="res://Scenes/storeScene/BuyItems/Buy_computer.tscn" id="3_svtxo"]
 [ext_resource type="PackedScene" uid="uid://dd87aqp8qyeeh" path="res://Scenes/HUD/HUD.tscn" id="5_dlomg"]
@@ -9,14 +8,17 @@
 [ext_resource type="PackedScene" uid="uid://3ydabm8er84k" path="res://Scenes/storeScene/BuyItems/Plant2.tscn" id="7_o7a2t"]
 [ext_resource type="PackedScene" uid="uid://7giovy5kdh3h" path="res://Scenes/storeScene/BuyItems/Plant3.tscn" id="8_m8r1y"]
 [ext_resource type="PackedScene" uid="uid://7e10tpgviffa" path="res://Scenes/storeScene/BuyItems/Plant4.tscn" id="9_3ikb8"]
+[ext_resource type="Script" uid="uid://c28tfwlqew4u7" path="res://scripts/teleport/TeleportPoint2D.cs" id="10_4cwn2"]
+[ext_resource type="PackedScene" uid="uid://jmjfk7f7rfhr" path="res://Scenes/storeScene/BuyItems/Lamp.tscn" id="10_m32lr"]
 [ext_resource type="PackedScene" uid="uid://ut5glvcqx7xj" path="res://Scenes/storeScene/BuyItems/Plant5.tscn" id="10_nqtt6"]
+[ext_resource type="PackedScene" uid="uid://duxnhqthqxyoq" path="res://Scenes/storeScene/BuyItems/Closet.tscn" id="11_1nkbh"]
+[ext_resource type="PackedScene" uid="uid://ber2pgjda3gn7" path="res://Resources/Player/Player.tscn" id="11_smynp"]
+[ext_resource type="Texture2D" uid="uid://c58hd5p1t448e" path="res://assets/sprites/Doormat.png" id="12_smynp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m32lr"]
+radius = 63.0
 
 [node name="main" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_f511j")]
-z_index = 1
-position = Vector2(171, 482)
-Speed = 600.0
 
 [node name="shop-view" parent="." instance=ExtResource("2_c0ofq")]
 
@@ -28,7 +30,7 @@ offset_top = 212.0
 offset_right = 322.0
 offset_bottom = 212.0
 
-[node name="Buy Hat" parent="." instance=ExtResource("5_mu3km")]
+[node name="Hat" parent="." instance=ExtResource("5_mu3km")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -39,7 +41,7 @@ offset_bottom = 214.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Plant1" parent="." instance=ExtResource("6_mu3km")]
+[node name="Flower_1" parent="." instance=ExtResource("6_mu3km")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -50,19 +52,19 @@ offset_bottom = 211.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Plant2" parent="." instance=ExtResource("7_o7a2t")]
+[node name="Flower_2" parent="." instance=ExtResource("7_o7a2t")]
 offset_left = 114.0
 offset_top = 210.0
 offset_right = 114.0
 offset_bottom = 210.0
 
-[node name="Plant3" parent="." instance=ExtResource("8_m8r1y")]
+[node name="Flower_3" parent="." instance=ExtResource("8_m8r1y")]
 offset_left = 183.0
 offset_top = 210.0
 offset_right = 183.0
 offset_bottom = 210.0
 
-[node name="Plant4" parent="." instance=ExtResource("9_3ikb8")]
+[node name="Flower_4" parent="." instance=ExtResource("9_3ikb8")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -73,8 +75,44 @@ offset_bottom = 274.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Plant5" parent="." instance=ExtResource("10_nqtt6")]
+[node name="Flower_5" parent="." instance=ExtResource("10_nqtt6")]
 offset_left = 116.0
 offset_top = 272.0
 offset_right = 116.0
 offset_bottom = 272.0
+
+[node name="Lamp" parent="." instance=ExtResource("10_m32lr")]
+offset_left = 304.0
+offset_top = 273.0
+offset_right = 304.0
+offset_bottom = 273.0
+
+[node name="Closet" parent="." instance=ExtResource("11_1nkbh")]
+offset_left = 368.0
+offset_top = 273.0
+offset_right = 368.0
+offset_bottom = 273.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(266, 605)
+scale = Vector2(5, 5)
+texture = ExtResource("12_smynp")
+
+[node name="TeleportPoint2D" type="Node2D" parent="."]
+position = Vector2(618, 497)
+script = ExtResource("10_4cwn2")
+TeleportId = "tp_store_ins"
+Displayname = "Tp inside store"
+DestinationTeleportId = "tp_store_ou"
+metadata/_custom_type_script = "uid://c28tfwlqew4u7"
+
+[node name="Area2D" type="Area2D" parent="TeleportPoint2D"]
+position = Vector2(-353, 139)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportPoint2D/Area2D"]
+shape = SubResource("CircleShape2D_m32lr")
+
+[node name="Player" parent="." instance=ExtResource("11_smynp")]
+position = Vector2(275.0001, 598)
+scale = Vector2(5, 5)
