@@ -17,6 +17,15 @@ public partial class RoomUpgradeLoader : Node
         UpgradeManager.instance.UpgradeEnabled += OnUpgradeEnabled;
     }
 
+    public override void _ExitTree()
+    {
+        if (UpgradeManager.instance != null)
+        {
+            UpgradeManager.instance.UpgradeEnabled -= OnUpgradeEnabled;
+        }
+    }
+
+
     private void OnUpgradeEnabled(string upgradeName)
     {
         GD.Print($"Upgrade enabled: {upgradeName}");
