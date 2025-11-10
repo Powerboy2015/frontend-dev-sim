@@ -5,18 +5,26 @@
 [resource]
 script = ExtResource("1_app1u")
 TeleportPointIds = Dictionary[String, String]({
-"tp_store_ins": "tp_store_ins",
+"tp_house_in": "tp_house_in",
+"tp_house_out": "tp_house_out",
+"tp_store_in": "tp_store_in",
 "tp_store_ou": "tp_store_ou"
 })
 TeleportPointNames = Dictionary[String, String]({
-"tp_store_ins": "store inside",
+"tp_house_in": "tp inside house",
+"tp_house_out": "outside house",
+"tp_store_in": "Tp inside store",
 "tp_store_ou": "tp store out"
 })
 TeleportPointScenes = Dictionary[String, String]({
-"tp_store_ins": "res://Scenes/storeScene/Shop.tscn",
+"tp_house_in": "res://Scenes/roomScene/roomScene.tscn",
+"tp_house_out": "res://Scenes/outsideWorld/outsideWorld.tscn",
+"tp_store_in": "res://Scenes/storeScene/Shop.tscn",
 "tp_store_ou": "res://Scenes/outsideWorld/outsideWorld.tscn"
 })
 TeleportPointPaths = Dictionary[String, String]({
-"tp_store_ins": "main/TeleportPoint2D",
+"tp_house_in": "RoomScene/TeleportPoint2D",
+"tp_house_out": "OutsideWorld/TeleportPoint2D/TeleportPoint2D",
+"tp_store_in": "main/TeleportPoint2D",
 "tp_store_ou": "OutsideWorld/TeleportPoint2D"
 })
