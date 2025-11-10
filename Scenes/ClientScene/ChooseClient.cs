@@ -22,7 +22,7 @@ public partial class ChooseClient : Control
         var CanvasLayer = GetParent().GetParent().GetParent().GetParent().GetParent();
         var instance = baller.Instantiate(); // idk why but if i change baller to something else it stops working lmao
         CanvasLayer.AddChild(instance);
-        
+
         GetParent().GetParent().GetParent().QueueFree();
     }
 }

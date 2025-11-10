@@ -8,8 +8,10 @@ public partial class DevScreen : Control
 
 	private string[] code_Parts;
 	private string[] Player_code_Parts;
-	
+
 	int Current_Step = 0;
+	[Export]
+	NodePath CloseButtonPath;
 
 	public override void _Ready()
 	{
@@ -17,8 +19,13 @@ public partial class DevScreen : Control
 		preview = GetNode<TextEdit>("Panel/CodeSpace/preview");
 		Input_Field = GetNode<TextEdit>("Panel/CodeSpace/Input_Field");
 
+		//close button
+
+		var CloseButton = GetNode<Button>(CloseButtonPath);
+		CloseButton.Pressed += OnCloseWindowPressed;
+
 		// get the challanges
-		var Challenge = ClientSettings.ChosenClient.CodingChallenges[1];
+		var Challenge = ClientSettings.ChosenClient.CodingChallenges[0];
 
 		// set phantom code
 		var Full_Code = Challenge.Code;
@@ -31,7 +38,7 @@ public partial class DevScreen : Control
 		// set player code
 		var Full_Player_Code = Challenge.PlayerCode;
 		Player_code_Parts = Full_Player_Code.Split("\n");
-		
+
 
 		// // set the first part of the phantom text
 		preview.Text = code_Parts[0];
@@ -57,10 +64,10 @@ public partial class DevScreen : Control
 	{
 		GD.Print("switch to live preview");
 	}
-	
+
 	private void OnCloseWindowPressed()
 	{
-		ClientSettings.ChosenClient.CodingChallenges[1].PlayerCode = Input_Field.Text;
+		ClientSettings.ChosenClient.CodingChallenges[0].PlayerCode = Input_Field.Text;
 
 		var ClientScreen = GD.Load<PackedScene>("res://Scenes/ClientScene/ClientScreen.tscn");
 
