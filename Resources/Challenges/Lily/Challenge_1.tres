@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CodingBase" load_steps=2 format=3 uid="uid://bpn7lphmr3511"]
+
+[ext_resource type="Script" uid="uid://dirskmlr28wt1" path="res://Resources/Resource_Classes/CodingBase.cs" id="1_0qry0"]
+
+[resource]
+script = ExtResource("1_0qry0")
+Code = "<html>\\n\\t<body>\\n\\t\\t<h1>hello world!</h1>\\n\\t</body>\\n</html>"

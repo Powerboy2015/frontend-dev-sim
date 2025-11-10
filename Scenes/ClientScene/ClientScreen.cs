@@ -4,9 +4,13 @@ using System;
 public partial class ClientScreen : Control
 {
 	private Button _closeButton;
+	private Label coinCount;
 
 	public override void _Ready()
 	{
+		coinCount = GetNode<Label>("Panel/Coins/Count");
+		coinCount.Text = Wallet.Instance.Coins.ToString();
+
 		_closeButton = GetNode<Button>("Panel/MenuBar/Button");
 		_closeButton.Pressed += OnClosePressed;
 		Visible = true;
