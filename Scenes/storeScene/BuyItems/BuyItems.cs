@@ -17,9 +17,11 @@ public partial class BuyItems : Control
 		Amount = GetNode<Label>("Panel/Price");
 		int x = Int32.Parse(Amount.Text);
 		GD.Print(x);
-		Wallet.Instance.RemoveCoins(x);
-
+		if (Wallet.Instance.RemoveCoins(x))
+		{
 		// XXX Names of objects are now directly relevant to upgrades. Use them in order to enable upgrades.
-		UpgradeManager.instance.EnableUpgrade(Name);
+		UpgradeManager.instance.EnableUpgrade(Name);    
+        }
+
 	}
 }

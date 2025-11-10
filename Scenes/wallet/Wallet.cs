@@ -22,18 +22,19 @@ public partial class Wallet : Node2D
 		EmitSignal(SignalName.CoinsChanged);
 	}
 
-	public void RemoveCoins(int amount)
+	public bool RemoveCoins(int amount)
 	{
 
 		if (Coins - amount >= 0)
 		{
 			Coins -= amount;
 			EmitSignal(SignalName.CoinsChanged);
+			return true;
 		}
 
 		else
 		{
-			return;
+			return false;
 		}
 	}
 }
