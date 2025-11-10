@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TeleportRegistry" load_steps=2 format=3 uid="uid://cjrrmq6gb2nh2"]
+
+[ext_resource type="Script" uid="uid://67xvld7iumth" path="res://scripts/teleport/TeleportRegistry.cs" id="1_app1u"]
+
+[resource]
+script = ExtResource("1_app1u")
+TeleportPointIds = Dictionary[String, String]({
+"tp_store_ins": "tp_store_ins",
+"tp_store_ou": "tp_store_ou"
+})
+TeleportPointNames = Dictionary[String, String]({
+"tp_store_ins": "store inside",
+"tp_store_ou": "tp store out"
+})
+TeleportPointScenes = Dictionary[String, String]({
+"tp_store_ins": "res://Scenes/storeScene/Shop.tscn",
+"tp_store_ou": "res://Scenes/outsideWorld/outsideWorld.tscn"
+})
+TeleportPointPaths = Dictionary[String, String]({
+"tp_store_ins": "main/TeleportPoint2D",
+"tp_store_ou": "OutsideWorld/TeleportPoint2D"
+})

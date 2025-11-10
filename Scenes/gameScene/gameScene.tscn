@@ -24,9 +24,3 @@ position = Vector2(218, 614)
 texture = ExtResource("1_l70v6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TP_entrance_store" type="Node2D" parent="."]
-position = Vector2(174, 217)
-script = ExtResource("2_cp5gj")
-DestinationScene = ExtResource("4_sbpld")
-metadata/_custom_type_script = "uid://cbp2ir8i24pie"

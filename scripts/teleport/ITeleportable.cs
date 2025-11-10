@@ -6,5 +6,5 @@ using Godot;
 // It can impelement this in order to call it back later.
 public interface ITeleportable
 {
-    public void TeleportTo(Vector2 desitnation);
+	public void TeleportTo(Vector2 destination);
 }

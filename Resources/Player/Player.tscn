@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://ber2pgjda3gn7"]
 
+[ext_resource type="Script" uid="uid://dsg8006i8juk4" path="res://scripts/player/Player.cs" id="1_h6ei6"]
 [ext_resource type="Texture2D" uid="uid://c2dj04pvt4hk8" path="res://assets/sprites/playerCharacter.png" id="1_oil66"]
-[ext_resource type="Script" uid="uid://bbvu8j4thkw2q" path="res://scripts/player/PlayerMovement.cs" id="2_h6ei6"]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.75, 0.75)
 collision_layer = 33
-script = ExtResource("2_h6ei6")
+script = ExtResource("1_h6ei6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
