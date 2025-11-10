@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://iofljol036va"]
+[gd_scene load_steps=20 format=3 uid="uid://iofljol036va"]
 
 [ext_resource type="PackedScene" uid="uid://bbxk3na72ojai" path="res://Scenes/playerScene/player.tscn" id="1_2drtv"]
 [ext_resource type="Texture2D" uid="uid://c2wimft18mnof" path="res://Sprites/background.png" id="2_pft12"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c2r7nhxbabf7j" path="res://Sprites/player_desk.png" id="5_vlrlr"]
 [ext_resource type="FontFile" uid="uid://dt02vq4fp75fw" path="res://assets/fonts/Jersey10-Regular.ttf" id="8_pft12"]
 [ext_resource type="PackedScene" uid="uid://c4qii8p35ld4u" path="res://Scenes/ClientScene/ClientScreen.tscn" id="9_7xx06"]
+[ext_resource type="Script" uid="uid://c28tfwlqew4u7" path="res://scripts/teleport/TeleportPoint2D.cs" id="10_omw6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xmba"]
 size = Vector2(1147.4375, 337.21875)
@@ -38,12 +39,14 @@ size = Vector2(692.0904, 298.983)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqj7t"]
 size = Vector2(3241.7979, 1448.4629)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe0ax"]
+radius = 60.299255
+
 [node name="RoomScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2drtv")]
 z_index = 1
-position = Vector2(171, 482)
-Speed = 600.0
+position = Vector2(531.52, 482)
 
 [node name="RoomView" type="Node2D" parent="."]
 
@@ -145,3 +148,17 @@ text = "Open Computer"
 [node name="ClientScene" type="CanvasLayer" parent="."]
 
 [node name="ClientScreen" parent="ClientScene" instance=ExtResource("9_7xx06")]
+
+[node name="TeleportPoint2D" type="Node2D" parent="."]
+position = Vector2(451, 510)
+script = ExtResource("10_omw6d")
+TeleportId = "tp_house_in"
+Displayname = "tp inside house"
+DestinationTeleportId = "tp_house_out"
+metadata/_custom_type_script = "uid://c28tfwlqew4u7"
+
+[node name="Area2D" type="Area2D" parent="TeleportPoint2D"]
+position = Vector2(-186, 137)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportPoint2D/Area2D"]
+shape = SubResource("CircleShape2D_pe0ax")

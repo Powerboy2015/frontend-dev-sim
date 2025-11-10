@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://cmdr2q1bpalm0"]
+[gd_scene load_steps=15 format=4 uid="uid://cmdr2q1bpalm0"]
 
 [ext_resource type="Texture2D" uid="uid://byqj6mi2n87jq" path="res://assets/sprites/WorldMap.png" id="1_0xto8"]
 [ext_resource type="TileSet" uid="uid://bfcbcssl1xfjp" path="res://assets/sprites/outsideTileSet.tres" id="1_gb6k6"]
 [ext_resource type="PackedScene" uid="uid://ber2pgjda3gn7" path="res://Resources/Player/Player.tscn" id="3_iotst"]
+[ext_resource type="Script" uid="uid://c28tfwlqew4u7" path="res://scripts/teleport/TeleportPoint2D.cs" id="4_cpcjf"]
 
 [sub_resource type="Gradient" id="Gradient_gb6k6"]
 
@@ -32,6 +33,9 @@ polygon = PackedVector2Array(56, -12, 48, -27, 39, 7, 40, 54, 56, 38)
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cpcjf"]
 points = PackedVector2Array(-56, 6, -56, 34, 40, 33, 55, 19, 56, -10, 49, -27, -41, -27)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cpcjf"]
+radius = 6.0
 
 [node name="OutsideWorld" type="Node2D"]
 texture_filter = 3
@@ -101,7 +105,7 @@ shape = SubResource("RectangleShape2D_cpcjf")
 [node name="MainHouse" type="Sprite2D" parent="."]
 light_mask = 3
 texture_filter = 3
-position = Vector2(1500, 90)
+position = Vector2(800, 90)
 texture = ExtResource("1_0xto8")
 
 [node name="1" type="LightOccluder2D" parent="MainHouse"]
@@ -129,8 +133,8 @@ height = 1.0
 max_distance = 2733.0
 
 [node name="Player" parent="." instance=ExtResource("3_iotst")]
-position = Vector2(1534, 146)
-playerSpeed = 100
+position = Vector2(724, 162)
+speed = 75.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -138,3 +142,31 @@ limit_left = 0
 limit_top = 0
 limit_right = 1920
 limit_bottom = 1072
+
+[node name="TeleportPoint2D" type="Node2D" parent="."]
+position = Vector2(172, 167)
+script = ExtResource("4_cpcjf")
+TeleportId = "tp_store_ou"
+Displayname = "tp store out"
+DestinationTeleportId = "tp_store_ins"
+metadata/_custom_type_script = "uid://c28tfwlqew4u7"
+
+[node name="Area2D" type="Area2D" parent="TeleportPoint2D"]
+position = Vector2(-60, -22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportPoint2D/Area2D"]
+shape = SubResource("CircleShape2D_cpcjf")
+
+[node name="TeleportPoint2D" type="Node2D" parent="TeleportPoint2D"]
+position = Vector2(583, -9)
+script = ExtResource("4_cpcjf")
+TeleportId = "tp_house_out"
+Displayname = "outside house"
+DestinationTeleportId = "tp_house_in"
+metadata/_custom_type_script = "uid://c28tfwlqew4u7"
+
+[node name="Area2D" type="Area2D" parent="TeleportPoint2D/TeleportPoint2D"]
+position = Vector2(46, -27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportPoint2D/TeleportPoint2D/Area2D"]
+shape = SubResource("CircleShape2D_cpcjf")
