@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://e4p5fy0umqa1"]
+[gd_scene load_steps=14 format=3 uid="uid://e4p5fy0umqa1"]
 
 [ext_resource type="PackedScene" uid="uid://cwha2u1yiirwn" path="res://Scenes/storeScene/shop_view.tscn" id="2_c0ofq"]
 [ext_resource type="PackedScene" uid="uid://d27g11eojmfrk" path="res://Scenes/storeScene/BuyItems/Buy_computer.tscn" id="3_svtxo"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c28tfwlqew4u7" path="res://scripts/teleport/TeleportPoint2D.cs" id="10_4cwn2"]
 [ext_resource type="PackedScene" uid="uid://ut5glvcqx7xj" path="res://Scenes/storeScene/BuyItems/Plant5.tscn" id="10_nqtt6"]
 [ext_resource type="PackedScene" uid="uid://ber2pgjda3gn7" path="res://Resources/Player/Player.tscn" id="11_smynp"]
+[ext_resource type="Texture2D" uid="uid://c58hd5p1t448e" path="res://assets/sprites/Doormat.png" id="12_smynp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m32lr"]
 radius = 63.0
@@ -78,10 +79,16 @@ offset_top = 272.0
 offset_right = 116.0
 offset_bottom = 272.0
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(266, 605)
+scale = Vector2(5, 5)
+texture = ExtResource("12_smynp")
+
 [node name="TeleportPoint2D" type="Node2D" parent="."]
 position = Vector2(618, 497)
 script = ExtResource("10_4cwn2")
-TeleportId = "tp_store_in"
+TeleportId = "tp_store_ins"
 Displayname = "Tp inside store"
 DestinationTeleportId = "tp_store_ou"
 metadata/_custom_type_script = "uid://c28tfwlqew4u7"
@@ -93,5 +100,5 @@ position = Vector2(-353, 139)
 shape = SubResource("CircleShape2D_m32lr")
 
 [node name="Player" parent="." instance=ExtResource("11_smynp")]
-position = Vector2(620.00006, 438.00006)
+position = Vector2(275.0001, 598)
 scale = Vector2(5, 5)
