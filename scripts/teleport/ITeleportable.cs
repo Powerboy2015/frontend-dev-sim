@@ -7,4 +7,5 @@ using Godot;
 public interface ITeleportable
 {
 	public void TeleportTo(Vector2 destination);
+	public void DisplayIcon(bool _display);
 }

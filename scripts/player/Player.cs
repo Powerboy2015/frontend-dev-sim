@@ -5,6 +5,17 @@ public partial class Player : CharacterBody2D, ITeleportable
 	[Export]
 	public float speed { get; set; } = 300.0f;
 
+	public CharacterBody2D collisionPolygon2D;
+
+	private Area2D currentTeleportArea = null;
+
+	[Export]
+	public NodePath enterButtonIcon;
+
+	[Export]
+	public Sprite2D JerryIcon;
+	private Sprite2D enterButton;
+
 	public void TeleportTo(Vector2 destination)
 	{
 		GlobalPosition = destination;
@@ -15,6 +26,8 @@ public partial class Player : CharacterBody2D, ITeleportable
 	public override void _Ready()
 	{
 		AddToGroup("player");
+		enterButton = GetNode<Sprite2D>(enterButtonIcon);
+		enterButton.Visible = false;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -31,8 +44,46 @@ public partial class Player : CharacterBody2D, ITeleportable
 			velocity = Vector2.Zero;
 		}
 
+		if (direction.X < 0)
+		{
+			JerryIcon.FlipH = true;
+		}
+		else if (direction.X > 0)
+		{
+			JerryIcon.FlipH = false;
+		}
+
 		Velocity = velocity;
 		MoveAndSlide();
+
+		// Check for teleport input when in teleport area
+		if (currentTeleportArea != null && Input.IsActionJustPressed("ui_accept"))
+		{
+			// Trigger teleport on the TeleportPoint2D
+			if (currentTeleportArea.HasMethod("Teleport"))
+			{
+				currentTeleportArea.Call("Teleport");
+			}
+		}
+	}
+
+	public void SetTeleportArea(Area2D area)
+	{
+		currentTeleportArea = area;
+	}
+
+	public void ClearTeleportArea(Area2D area)
+	{
+		if (currentTeleportArea == area)
+		{
+			currentTeleportArea = null;
+		}
+	}
+
+
+	public void DisplayIcon(bool _display)
+	{
+		enterButton.Visible = _display;
 	}
 
 }
